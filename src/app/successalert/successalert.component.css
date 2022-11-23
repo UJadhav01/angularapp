@@ -1,0 +1,12 @@
+h3
+{
+  background-color: rgb(236, 44, 44);
+  border: 2px solid cadetblue;
+  padding: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+text-align: center;
+}
+h3:hover{
+  background-color: cornflowerblue;
+}

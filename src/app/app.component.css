@@ -1,0 +1,13 @@
+h2{
+  color: rgb(189, 28, 124);
+}
+p{
+  text-justify: auto;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+p span{
+  font-weight: 700;
+  font-size: large;
+}

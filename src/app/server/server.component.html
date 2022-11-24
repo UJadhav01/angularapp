@@ -1,1 +1,20 @@
-<p>server works!</p>
+
+<div style="margin-left: 100px;margin-top: 50px;">
+  <h2>Two-way data binding example</h2>
+  <div>Enter User Name: <input type="text" [(ngModel)]="userName"></div>
+  <p>User Name is : {{userName}}</p>
+  <button type="button" (click)="onClear()" [disabled]='!userName'>User Name</button>
+</div>
+
+
+
+
+<!-- <label>{{name}}</label>
+<p>{{getServerStatus()}}</p> string interpolation ts to html
+<button [disabled]="!allowNewServer" >add Server</button><!-- one way property binding ts to html -->
+<!-- <img [src]="imgUrl" alt="flower image" width="150px" height="150px">one way property binding ts to html -->
+<!-- <button [disabled]="!allowNewServer" (click)="onServerCreated()">add Server</button><!-- one way event binding html to ts-->
+ <!--<div>{{serverCreationStatus}}</div>
+<div>Two way data binding</div>
+<div><input type="text" [(ngModel)]="serverName"></div>
+{{serverName}}  -->

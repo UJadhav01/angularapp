@@ -7,7 +7,7 @@ import { ServerComponent } from './server/server.component';
 import { SuccessalertComponent } from './successalert/successalert.component';
 import { WarningAlertComponent } from './warningalert/warningalert.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

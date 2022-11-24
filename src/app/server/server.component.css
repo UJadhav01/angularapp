@@ -1,0 +1,17 @@
+header
+{
+  background-color: rgb(211, 191, 191);
+  position: fixed;
+  height: 50px;
+  top: 0;
+  left: 0;
+right: 0;
+}
+header ul{
+  list-style: none;
+display: flex;
+justify-content: space-around;
+}
+header ul li {
+  padding: 10px;
+}

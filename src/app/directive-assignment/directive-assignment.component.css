@@ -1,0 +1,15 @@
+
+
+.card
+{
+  width: 700px;
+  margin-left: 400px;
+  margin-top: 20px;
+
+}
+.card-header{
+  background-color: rgb(84, 139, 120);
+}
+.card-body{
+  background-color: rgb(196, 137, 159);
+}

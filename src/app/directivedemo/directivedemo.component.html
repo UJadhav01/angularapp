@@ -1,0 +1,25 @@
+<!-- <p *ngIf="!isShow">directiveexample works!</p>or simply inverse -->
+<p *ngIf="isShow">directiveexample works!</p>
+
+<div><div>{{title}}</div></div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title of Movie</th>
+        <th>Name of director</th>
+        <th>Casts</th>
+        <th>Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of movie">
+        <td>{{item.title}}</td>
+        <td>{{item.director}}</td>
+        <td>{{item.cast}}</td>
+        <td>{{item.releaseDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

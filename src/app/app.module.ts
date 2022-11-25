@@ -8,6 +8,9 @@ import { SuccessalertComponent } from './successalert/successalert.component';
 import { WarningAlertComponent } from './warningalert/warningalert.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { DirectivedemoComponent } from './directivedemo/directivedemo.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +18,9 @@ import { FormsModule } from '@angular/forms';
     SuccessalertComponent,
     WarningAlertComponent,
     HeaderComponent,
+    DirectivedemoComponent,
+    NgswitchComponent,
+    DirectiveAssignmentComponent,
   ],
   imports: [
     BrowserModule,

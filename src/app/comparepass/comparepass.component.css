@@ -1,0 +1,25 @@
+
+.card
+{
+border: 2px solid rgb(17, 44, 44);
+width: 500px;
+margin: 50px 50px;
+background-color: rgb(163, 160, 163);
+font-size: 18px;
+}
+.card-header{
+  font-size: 20px;
+  background-color: rgb(189, 247, 228);
+
+}
+#password
+{
+  width: 250px;
+
+}
+#confirmPassword
+{
+  width: 250px;
+}
+
+

@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-header">Password Validation using custom directive</div>
+  <div class="card-body">
+<div class="container" id="mainDiv">
+  <div class="row">
+    <div class="col-md-6 offset-md-2">
+      <form [formGroup]="registerForm" (ngSubmit)="login()">
+        <br /><br />
+        <div class="form-group">
+          Enter Password :<input
+          id="password"
+            type="text"
+            formControlName="password"
+            class="form-control"
+            placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && formval.password.errors }"
+          />
+          <div
+            *ngIf="submitted && formval.password.errors"
+            class="invalid-feedback"
+          >
+            <div ngClass="formval.password.errors.required">
+              Password is required.
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="form-group">
+         Confirm Password <input
+          id="confirmPassword"
+            type="text"
+            formControlName="confirmPassword"
+            class="form-control"
+            placeholder="Confirm Password"
+            [ngClass]="{
+              'is-invalid': submitted && formval.confirmPassword.errors
+            }"
+            appComparepass="password"
+          />
+          <div
+            *ngIf="submitted && formval.confirmPassword.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="formval.confirmPassword.errors.required">
+              Confirm password is required
+            </div>
+            <div *ngIf="formval.confirmPassword.errors?.notEqual">
+              Password and Confirm Password is Mismatch
+            </div>
+          </div>
+        </div>
+        <br /><br />
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary signin">
+        Submit
+            <span class="arrowbtn"
+              ><span class="fa fa-arrow-right"></span
+            ></span>
+          </button>
+          <br><br>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  </div>

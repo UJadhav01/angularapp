@@ -7,10 +7,13 @@ import { ServerComponent } from './server/server.component';
 import { SuccessalertComponent } from './successalert/successalert.component';
 import { WarningAlertComponent } from './warningalert/warningalert.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivedemoComponent } from './directivedemo/directivedemo.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
-import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
+import { StructureDirectiveComponent } from './structure-directive/structure-directive.component';
+import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
+import { ComparepassComponent } from './comparepass/comparepass.component';
+import { ComparepassDirective } from './comparepass.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +23,16 @@ import { DirectiveAssignmentComponent } from './directive-assignment/directive-a
     HeaderComponent,
     DirectivedemoComponent,
     NgswitchComponent,
-    DirectiveAssignmentComponent,
+    StructureDirectiveComponent,
+    AttributeDirectiveComponent,
+    ComparepassComponent,
+    ComparepassDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

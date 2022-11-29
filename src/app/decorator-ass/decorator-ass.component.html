@@ -1,9 +1,35 @@
-<div class="table">
+<!-- for single object
+
+  <div class="table">
   <h2>Data from parent component :</h2>
 
 <div *ngFor="let key of transformedBody">
   <h3>{{ key }}: {{ employeeInfo[key] }}</h3>
 </div>
+</div> -->
+
+<!-- for multiple objects -->
+<div>
+  <table class="table">
+    <caption style="font-weight:900;text-align :center">Data from parent component</caption>
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Company</th>
+        <th>Employee Department</th>
+      </tr>
+    </thead>
+<tbody>
+  <tr *ngFor="let item of employeeInfo">
+    <td>{{item.emp_id}}</td>
+    <td> {{item.emp_name}}</td>
+    <td>{{item.emp_salary}}</td>
+    <td> {{item.emp_company}}</td>
+    <td>{{item.emp_department}}</td>
+
+  </tr>
+</tbody>
+  </table>
 </div>
-
-

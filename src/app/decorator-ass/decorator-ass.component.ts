@@ -9,18 +9,22 @@ export class DecoratorAssComponent implements OnInit {
 
   @Input() employeeInfo;
 
-  get transformedBody() {
-    return Object.keys(this.employeeInfo);
-  }
+  //for getting key and property of objects
+  // get transformedBody() {
+  //   return Object.keys(this.employeeInfo);
+  // }
   constructor() {
   }
 
   ngOnInit() {
-    console.log(`Send from parent Employee id = `,this.employeeInfo.emp_id);
-    console.log(`Send from parent Employee Name = `,this.employeeInfo.emp_name);
-    console.log(`Send from parent Employee salary = `,this.employeeInfo.emp_salary);
-    console.log(`Send from parent Employee Company = `,this.employeeInfo.emp_company);
-    console.log(`Send from parent Employee Department = `,this.employeeInfo.emp_department);
+    //for displaying data of single object
+    // console.log(`Send from parent Employee id = `,this.employeeInfo.emp_id);
+    // console.log(`Send from parent Employee Name = `,this.employeeInfo.emp_name);
+    // console.log(`Send from parent Employee salary = `,this.employeeInfo.emp_salary);
+    // console.log(`Send from parent Employee Company = `,this.employeeInfo.emp_company);
+    // console.log(`Send from parent Employee Department = `,this.employeeInfo.emp_department);
+
+    console.table(this.employeeInfo); //displaying data of array of objects
 
   }
 }

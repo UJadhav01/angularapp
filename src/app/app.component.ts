@@ -26,4 +26,16 @@ export class AppComponent {
     this.empObject1.push({ emp_id:5,emp_name:'jack',emp_salary:60000,emp_company:'cognizent',emp_department:'backend'});
 
   }
+
+  arrayOfVeg:string[]=['Tomato','Potato'];
+  newArrayOfCourses:any[]=[];
+  getDataFromChild(event){
+    this.arrayOfVeg.push(event);
+  }
+
+
+  getDataFromObject(value){
+this.newArrayOfCourses=value;
+
+  }
 }

@@ -1,6 +1,42 @@
 <!-- <div><app-header></app-header></div>
 <br /><br /><br /> -->
-<app-decorator-ass [employeeInfo]="empObject1"></app-decorator-ass>
+
+  <!-- <app-decorator-ass (vegetables)="getDataFromChild($event)"></app-decorator-ass>
+-->
+<div class="mainDiv">
+
+
+<app-output-decorator (newCourses)="getDataFromObject($event)" (vegetables)="getDataFromChild($event)"></app-output-decorator>
+<!-- <ul *ngFor="let item of arrayOfVeg">
+  <li>{{item}}</li>
+</ul>
+<br><br> -->
+    <table class="table">
+<thead>
+  <tr>
+    <th>Course Id</th>
+    <th>Course Name</th>
+    <th>Course Content</th>
+    <th>Job Title</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let courseItems of newArrayOfCourses">
+    <td>{{courseItems.courseId}}</td>
+    <td>{{courseItems.courseName}}</td>
+    <td>{{courseItems.courseContent}}</td>
+    <td>{{courseItems.youCanGetJobAs}}</td>
+
+  </tr>
+</tbody>
+    </table>
+
+  </div>
+
+
+
+
+<!-- <app-decorator-ass [employeeInfo]="empObject1"></app-decorator-ass> -->
 
 <!-- <app-decorator-ass [employeeInfo]="employeeInfo"></app-decorator-ass> -->
 

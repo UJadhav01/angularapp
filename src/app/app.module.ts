@@ -15,6 +15,7 @@ import { AttributeDirectiveComponent } from './attribute-directive/attribute-dir
 import { ComparepassComponent } from './comparepass/comparepass.component';
 import { ComparepassDirective } from './comparepass.directive';
 import { DecoratorAssComponent } from './decorator-ass/decorator-ass.component';
+import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { DecoratorAssComponent } from './decorator-ass/decorator-ass.component';
     ComparepassComponent,
     ComparepassDirective,
     DecoratorAssComponent,
+    OutputDecoratorComponent,
   ],
   imports: [
     BrowserModule,

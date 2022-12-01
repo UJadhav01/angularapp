@@ -16,6 +16,8 @@ import { ComparepassComponent } from './comparepass/comparepass.component';
 import { ComparepassDirective } from './comparepass.directive';
 import { DecoratorAssComponent } from './decorator-ass/decorator-ass.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
+import { AngularHooksLifeCycleComponent } from './angular-hooks-life-cycle/angular-hooks-life-cycle.component';
+import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { OutputDecoratorComponent } from './output-decorator/output-decorator.co
     ComparepassDirective,
     DecoratorAssComponent,
     OutputDecoratorComponent,
+    AngularHooksLifeCycleComponent,
+    ParentHooksLifeCycleComponent,
   ],
   imports: [
     BrowserModule,

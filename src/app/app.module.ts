@@ -18,6 +18,7 @@ import { DecoratorAssComponent } from './decorator-ass/decorator-ass.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 import { AngularHooksLifeCycleComponent } from './angular-hooks-life-cycle/angular-hooks-life-cycle.component';
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
+import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-
     OutputDecoratorComponent,
     AngularHooksLifeCycleComponent,
     ParentHooksLifeCycleComponent,
+    ToggleButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,58 @@
+
+  <div class="first">
+    <h3>Beauty services at home </h3>
+
+  <div id="mainDiv">
+
+      <label for="studName" class="lbin1">Enter your Name :</label>
+      <input type="text" class="lbin" #custName [(ngModel)]="customerName"><br><br>
+
+      <label for="studDegree" class="lbin1">Service you want :</label>
+      <input type="text" class="lbin" #custService [(ngModel)]="wantService"><br><br>
+
+      <label for="studPassYear" class="lbin1">Select date for service :</label>
+      <input type="date" class="lbin" #custdate [(ngModel)]="selectDate" ><br><br>
+
+      <label for="studPassYear" class="lbin1">Select time for service :</label>
+        <input type="time" class="lbin" #custtime [(ngModel)]="selectTime" ><br><br>
+
+        <label for="studPassYear" class="lbin1">Enter your working mob. no :</label>
+          <input type="tel" class="lbin" #custMob [(ngModel)]="customerMobile" ><br><br>
+
+      <button type="button" class="lbin2 btn btn-success" (click)="addData(custName.value,custService.value,custdate.value,custtime.value,custMob.value)">Book Your Service</button>
+
+  </div>
+<br>
+
+    <div>
+      <table class="table table-bordered">
+        <!-- <caption style="font-weight:900;text-align :center">Customer Information</caption> -->
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Wanted Service</th>
+            <th>Select Date</th>
+            <th>Select Time</th>
+            <th>Enter Mobile</th>
+          </tr>
+        </thead>
+    <tbody>
+      <tr *ngFor="let item of cutInfo">
+        <td> {{item.customerName}}</td>
+        <td>{{item.wantService}}</td>
+        <td> {{item.selectDate}}</td>
+        <td>{{item.selectTime}}</td>
+        <td>{{item.customerMobile}}</td>
+      </tr>
+    </tbody>
+      </table>
+    </div>
+
+
+    <!-- </select> -->
+
+
+    <!-- <app-angular-hooks-life-cycle [data]="arbitraryData"></app-angular-hooks-life-cycle> -->
+    <app-angular-hooks-life-cycle [cutInfo2]="cutInfo"></app-angular-hooks-life-cycle>
+
+  </div>

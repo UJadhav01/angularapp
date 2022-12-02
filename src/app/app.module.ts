@@ -19,6 +19,7 @@ import { OutputDecoratorComponent } from './output-decorator/output-decorator.co
 import { AngularHooksLifeCycleComponent } from './angular-hooks-life-cycle/angular-hooks-life-cycle.component';
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     AngularHooksLifeCycleComponent,
     ParentHooksLifeCycleComponent,
     ToggleButtonComponent,
+    AddRemoveContentOnButtonComponent,
   ],
   imports: [
     BrowserModule,

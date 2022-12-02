@@ -27,4 +27,8 @@ export class ToggleButtonComponent implements OnInit {
 
     }
   }
-
+  /**  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1) ;
+  }
+ */

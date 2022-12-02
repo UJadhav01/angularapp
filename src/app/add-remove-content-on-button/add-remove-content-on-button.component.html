@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+    <p>Add and remove content in table on click button event :</p>
+<hr>
+    <input type="text" [(ngModel)]="name" #inp placeholder="Enter favorite player name">
+    <button class="btn btn-primary b" (click)="addInputAndButton(inp.value)">Add player</button>
+    <button class="crealBtn" (click)="onClear()"> Clear Input</button>
+
+    <div class="card">
+    <div class="card-header">
+      <p>Click on remove button to remove particular player</p>
+    </div>
+    <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Cricket Plyers Names</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data;let i=index">
+        <td>{{item.name}}</td>
+        <td><button (click)="onRemove(i)" class="removeBtn">Remove</button></td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+

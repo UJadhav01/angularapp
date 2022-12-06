@@ -29,6 +29,7 @@ export class AppComponent {
 
   arrayOfVeg:string[]=['Tomato','Potato'];
   newArrayOfCourses:any[]=[];
+
   getDataFromChild(event){
     this.arrayOfVeg.push(event);
   }

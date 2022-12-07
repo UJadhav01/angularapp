@@ -1,0 +1,4 @@
+color change<input type="text" [(ngModel)]="colorName" (blur)="onHandleData($event)">
+<app-hooks-cycle-child [parentData]="colorName">
+  <h2 #h2fp>Template projection means simple accessing template element from the parent to child</h2>
+</app-hooks-cycle-child>

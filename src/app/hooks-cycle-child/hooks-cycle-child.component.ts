@@ -1,24 +1,47 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-hooks-cycle-child',
   templateUrl: './hooks-cycle-child.component.html',
   styleUrls: ['./hooks-cycle-child.component.css']
 })
-export class HooksCycleChildComponent implements OnChanges, OnInit ,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
+export class HooksCycleChildComponent implements
+OnChanges,
+ OnInit ,
+ DoCheck,
+ AfterContentInit,
+ AfterContentChecked,
+ AfterViewInit,
+ AfterViewChecked,
+ OnDestroy{
   @Input() parentData;
   @ContentChild('h2fp',{static:false} ) contentChild:ElementRef;
   @ViewChild('viewChildData',{static:false}) viewChild:ElementRef ;
 
-  constructor() { }
+  counter;
+  num:number=1;
+  constructor() {
+    const pi=3.14;
+    //for initialize the static or properties
+    //call super constructor
+    //for dependency injection
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
 console.log(`ngOnChanges called`,changes);
   }
   ngOnInit() {
+    this.counter = setInterval(() => {
+      this.num = this.num + 1 ;
+      console.log(this.num);
+      // api
+    }, 1000);
 
   }
   ngDoCheck(): void {
-    console.log('ngDoCheck called',this.contentChild);
+    console.log('ngDoCheck called');
+    // console.log('ngDoCheck called',this.contentChild);
+
 
   }
   ngAfterContentInit(): void {
@@ -36,6 +59,10 @@ console.log(`ngOnChanges called`,changes);
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked called',this.viewChild);
     this.viewChild.nativeElement.setAttribute('style',`color:${this.parentData}`);
+  }
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy called');
+    clearInterval(this.counter);
   }
 
 }

@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HooksCycleComponent implements OnInit {
   colorName='red';
+  destroyComponent=true;
   constructor() { }
 
   ngOnInit() {
   }
   onHandleData(value){
     this.colorName=value.target.value;
+  }
+  destroy(){
+    this.destroyComponent=!this.destroyComponent;
   }
 }

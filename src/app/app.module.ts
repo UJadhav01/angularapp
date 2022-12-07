@@ -20,6 +20,8 @@ import { AngularHooksLifeCycleComponent } from './angular-hooks-life-cycle/angul
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
+import { HooksCycleComponent } from './hooks-cycle/hooks-cycle.component';
+import { HooksCycleChildComponent } from './hooks-cycle-child/hooks-cycle-child.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-butto
     ParentHooksLifeCycleComponent,
     ToggleButtonComponent,
     AddRemoveContentOnButtonComponent,
+    HooksCycleComponent,
+    HooksCycleChildComponent,
   ],
   imports: [
     BrowserModule,

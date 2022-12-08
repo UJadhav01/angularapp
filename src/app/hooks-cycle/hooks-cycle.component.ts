@@ -16,6 +16,8 @@ export class HooksCycleComponent implements OnInit {
     this.colorName=value.target.value;
   }
   destroy(){
-    this.destroyComponent=!this.destroyComponent;
+    // this.destroyComponent=!this.destroyComponent;
+    this.destroyComponent=false;
+
   }
 }

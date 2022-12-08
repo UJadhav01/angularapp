@@ -6,7 +6,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   styleUrls: ['./hooks-cycle-child.component.css']
 })
 export class HooksCycleChildComponent implements
-OnChanges,
+ OnChanges,
  OnInit ,
  DoCheck,
  AfterContentInit,
@@ -28,36 +28,46 @@ OnChanges,
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-console.log(`ngOnChanges called`,changes);
+// console.log(`ngOnChanges called`,changes);
+console.log(`ngOnChanges called`);
+
   }
   ngOnInit() {
     this.counter = setInterval(() => {
       this.num = this.num + 1 ;
       console.log(this.num);
-      // api
+
+      //for stop setInterval method
+      if(this.num===3){
+        clearInterval(this.counter);
+      }
+      // api problem created like memory leakage
     }, 1000);
 
   }
   ngDoCheck(): void {
     console.log('ngDoCheck called');
+    this.parentData;
     // console.log('ngDoCheck called',this.contentChild);
-
-
   }
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit called',this.contentChild);
+    console.log('ngAfterContentInit called');
+    // console.log('ngAfterContentInit called',this.contentChild);
     // this.contentChild.nativeElement.setAttribute('style','color:green');
   }
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked called',this.contentChild);
+    console.log('ngAfterContentChecked called');
+    // console.log('ngAfterContentChecked called',this.contentChild);
     this.contentChild.nativeElement.setAttribute('style',`color:${this.parentData}`);
   }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit called',this.viewChild);
+    console.log('ngAfterViewInit called');
+    // console.log('ngAfterViewInit called',this.viewChild);
     // this.viewChild.nativeElement.setAttribute('style','color:brown');
   }
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked called',this.viewChild);
+    console.log('ngAfterViewChecked called');
+    // console.log('ngAfterViewChecked called',this.viewChild);
     this.viewChild.nativeElement.setAttribute('style',`color:${this.parentData}`);
   }
   ngOnDestroy(): void {

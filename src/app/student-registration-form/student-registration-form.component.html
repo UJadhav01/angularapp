@@ -1,0 +1,180 @@
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 text-left rounded shadow py-5">
+
+      <h3 class="mb-2 text-uppercase">Student registration form</h3>
+
+      <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm" >
+
+<div class="row">
+  <div class="col-md-4 mb-4">
+        <div class="form-group mt-1">
+          <label for="firstName">First Name</label>
+          <input
+            class="p-5"
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter first name"
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="form-group mt-1">
+          <label for="midleName">Father Name</label>
+          <input
+            class="p-5"
+            type="text"
+            class="form-control"
+            id="midleName"
+            name="midleName"
+            placeholder="Enter father name"
+            required
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="form-group mt-1">
+          <label for="lastName">Last Name</label>
+          <input
+            class="p-5"
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter last name"
+            required
+            ngModel
+          />
+        </div>
+      </div>
+    </div>
+
+      <div class="form-group mt-3">
+        <label for="address">Address :</label>
+
+        <div class="row px-5">
+          <div class="col-md-4 mb-4">
+        <div class="form-group mt-3">
+            <label for="course">Select CIty</label>
+            <select class="form-select" aria-label=".form-select-lg example" name="city" ngModel required>
+              <option value="1" selected>Select an Option</option>
+              <option value="2">Pandharpur</option>
+              <option value="3">Pune</option>
+              <option value="4">Mumbai</option>
+            </select>
+      </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+      <div class="form-group mt-3">
+      <label for="district">District</label>
+      <select class="form-control form-select" name="district" ngModel required>
+        <option value="none" selected>Select an Option</option>
+        <option value="Solapur">Solapur</option>
+        <option value="Satara">Satara</option>
+        <option value="Pune">Pune</option>
+      </select>
+      </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+      <div class="form-group mt-3">
+    <label for="state">State</label>
+    <select class="form-control form-select" name="state" ngModel required>
+      <option value="none" selected>Select an Option</option>
+      <option value="Maharastra">Maharastra</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Orisa">Orisa</option>
+    </select>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+  <h6 class="mb-0 me-4">Gender: </h6>
+
+  <div class="form-check form-check-inline mb-0 me-4">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+      value="option1" />
+    <label for="femaleGender">Female</label>
+  </div>
+
+  <div class="form-check form-check-inline mb-0 me-4 ">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+      value="option2" />
+    <label for="maleGender">Male</label>
+  </div>
+
+  <div class="form-check  mb-0">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+      value="option3" />
+    <label for="otherGender">Other</label>
+  </div>
+</div>
+
+<div class="form-group mt-2">
+  <label  for="dob">DOB</label>
+  <input type="date" id="dob" class="form-control " name="dob" required ngModel/>
+</div>
+
+        <div class="form-group mt-2">
+          <label for="email">Email address</label>
+          <input
+            class="px-md--5"
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+            ngModel
+          />
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="form-group mt-2">
+              <label for="collage">Select Collage</label>
+              <select class="form-control form-select" name="collage" id="collage" ngModel required>
+                <option value="Angular">SKN Sinhgad</option>
+                <option value="HTML">Raisoni</option>
+                <option value="JavaScript">D.Y.Patil</option>
+              </select>
+            </div>
+          </div>
+
+        <div class="col-md-4 mb-4">
+        <div class="form-group mt-2">
+          <label for="course">Select Course</label>
+          <select class="form-control form-select" name="course" id="course" ngModel required>
+            <option value="Angular">Angular</option>
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
+        </div>
+      </div>
+        </div>
+
+        <div class="d-flex justify-content-end pt-3">
+        <button
+          type="submit"
+          [disabled]="!myForm.valid"
+          class="btn btn-primary btn-lg me-4 mt-2"
+        >
+          Submit
+        </button>
+        <button type="reset" class="btn btn-warning btn-lg mt-2">
+          Reset Form
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+

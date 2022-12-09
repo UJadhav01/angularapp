@@ -35,6 +35,7 @@ import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-
 
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { StudentRegistrationFormComponent } from './student-registration-form/student-registration-form.component';
+import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { StudentRegistrationFormComponent } from './student-registration-form/st
     HooksCycleChildComponent,
     SimpleFormComponent,
     StudentRegistrationFormComponent,
+    TdfsecondassComponent,
   ],
   imports: [
     BrowserModule,

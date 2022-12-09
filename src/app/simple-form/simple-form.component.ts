@@ -8,9 +8,8 @@ import { NgForm } from '@angular/forms';
 
 })
 export class SimpleFormComponent implements OnInit {
-  NgForm=NgForm;
   constructor() { }
-
+username;
   ngOnInit() {
   }
   OnSubmit(form:NgForm){

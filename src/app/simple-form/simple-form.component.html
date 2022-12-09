@@ -2,20 +2,27 @@
   <div class="row justify-content-center">
       <div class="col-md-6 text-left rounded shadow py-5">
           <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm" >
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
               <div class="form-group mt-3">
                   <label for="username">User Name</label>
-                  <input class="p-5" type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required  ngModel>
+                  <input class="p-5" type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required  [(ngModel)]="username">
+                <span *ngIf="username">User Name: {{username}}</span>
                 </div>
+
               <div class="form-group mt-3" >
                 <label for="email" >Email address</label>
-                <input class="px-md--5" type="email" class="form-control" id="email"  name="email" placeholder="Enter email" required ngModel>
-
+                <input class="px-md--5" type="email" class="form-control" email
+                #email="ngModel" id="email"  name="email" placeholder="Enter email" required ngModel>
+                <span *ngIf="!email.valid && email.touched"></span>
               </div>
-
+              <small *ngIf="!userDetails.valid && userDetails.touched">enter valid inputs for user data</small>
+            </div>
 
               <div class="form-group mt-3">
                   <label for="course">Select Course</label>
-                  <select class="form-control" name="course" id="course" ngModel>
+                  <select class="form-control" name="course" id="course" [(ngModel)]="defaultselected">
+                    <option value="defaultselected">Select cource</option>
                       <option value="Angular">Angular</option>
                       <option value="HTML">HTML</option>
                       <option value="JavaScript">JavaScript</option>

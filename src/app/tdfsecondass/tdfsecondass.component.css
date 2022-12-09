@@ -1,0 +1,32 @@
+.maindiv{
+    border: 2px solid black;
+    margin-top: 40px;
+    width: fit-content;
+    padding: 5px;
+    background-color:lightcyan;
+}
+fieldset{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched {
+    border:2px solid rgb(130, 24, 42);
+    box-shadow: 0 0 12px rgba(255,13,45,36);
+  }
+  input.ng-touched,select.ng-touched {
+    border: 2px solid rgb(31, 229, 235);
+  }
+
+  form label,form select,form input{
+    font-size: large;
+    background-color: transparent;
+  }
+form input,form select{
+    border: 1px solid black;
+
+}
+table{
+  width: fit-content;
+}
+

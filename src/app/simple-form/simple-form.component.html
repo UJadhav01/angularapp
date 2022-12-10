@@ -1,38 +1,105 @@
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-md-6 text-left rounded shadow py-5">
-          <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm" >
+    <div class="col-md-6 text-left rounded shadow py-5">
+      <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+        <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+          <div class="form-group mt-3">
+            <label for="username">User Name</label>
+            <input
+              class="p-5"
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Enter user name"
+              required
+              [(ngModel)]="username"
+            />
+            <span *ngIf="username">User Name: {{ username }}</span>
+          </div>
 
-            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
-              <div class="form-group mt-3">
-                  <label for="username">User Name</label>
-                  <input class="p-5" type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required  [(ngModel)]="username">
-                <span *ngIf="username">User Name: {{username}}</span>
-                </div>
+          <div class="form-group mt-3">
+            <label for="email">Email address</label>
+            <input
+              class="px-md--5"
+              type="email"
+              class="form-control"
+              email
+              #email="ngModel"
+              id="email"
+              name="email"
+              placeholder="username@tcs.com"
+              pattern="^[a-zA-Z0-9]+@tcs\.[a-zA-z]+$"
+              title="Please provide only a tcs email address"
+              ngModel
+              required
+            />
+            <small id="passwordHelpInline" class="text-muted">
+              Must be  only tcs corporate e-mail address.
+            </small>
+            />
+            <span *ngIf="!email.valid && email.touched"></span>
+          </div>
+          <small *ngIf="!userDetails.valid && userDetails.touched"
+            >enter valid inputs for user data</small
+          >
+        </div>
 
-              <div class="form-group mt-3" >
-                <label for="email" >Email address</label>
-                <input class="px-md--5" type="email" class="form-control" email
-                #email="ngModel" id="email"  name="email" placeholder="Enter email" required ngModel>
-                <span *ngIf="!email.valid && email.touched"></span>
-              </div>
-              <small *ngIf="!userDetails.valid && userDetails.touched">enter valid inputs for user data</small>
-            </div>
+        <div class="form-group mt-3">
+          <label for="course">Select Course</label>
+          <select
+            class="form-control"
+            name="course"
+            id="course"
+            [(ngModel)]="defaultselected"
+          >
+            <option value="defaultselected">Select cource</option>
+            <option value="Angular">Angular</option>
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div
+            *ngFor="let gender of radioArray"
+            class="custom-control custom-radio"
+          >
+            <input
+              type="radio"
+              id="{{ gender.id }}"
+              name="gender"
+              value="{{ gender.value }}"
+              [ngModel]="defaultGender"
+              class="custom-control-input"
+            />
+            <label for="{{ gender.id }}" class="custom-control-label">{{
+              gender.value
+            }}</label>
+          </div>
+        </div>
 
-              <div class="form-group mt-3">
-                  <label for="course">Select Course</label>
-                  <select class="form-control" name="course" id="course" [(ngModel)]="defaultselected">
-                    <option value="defaultselected">Select cource</option>
-                      <option value="Angular">Angular</option>
-                      <option value="HTML">HTML</option>
-                      <option value="JavaScript">JavaScript</option>
-                  </select>
-              </div>
+        <div class="form-group">
+          <label for="date">DOB</label>
+          <input type="date" class="form-control" required ngModel />
+        </div>
 
-              <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary btn-lg me-4 mt-2">Submit</button>
-              <button type="reset" class="btn btn-primary btn-lg mt-2 ">Reset Form</button>
+        <button
+          type="submit"
+          [disabled]="!myForm.valid"
+          class="btn btn-primary btn-lg me-4 mt-2"
+        >
+          Submit
+        </button>
 
-            </form>
-      </div>
+        <div class="form-group mt-3">
+          <div *ngIf="submitData">
+            <p>{{ userData.name }}</p>
+            <p>{{ userData.email }}</p>
+            <p>{{ userData.courses }}</p>
+            <p>{{ userData.gender }}</p>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

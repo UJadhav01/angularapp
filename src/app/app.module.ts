@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +35,9 @@ import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { StudentRegistrationFormComponent } from './student-registration-form/student-registration-form.component';
 import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
+import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,13 +62,14 @@ import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
     SimpleFormComponent,
     StudentRegistrationFormComponent,
     TdfsecondassComponent,
+    Tdf3rdassignmentComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

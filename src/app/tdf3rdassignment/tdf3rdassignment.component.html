@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Employee Registration Form</h2>
+        <form #myForm="ngForm" (ngSubmit)="onRegister(myForm)">
+
+          <div class="maindiv px-5" >
+          <div class="row mt-3">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name :</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                name="firstName"
+                ngModel
+                required
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name :</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                name="lastName"
+                ngModel
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="form-group col-md-1 mr-5">
+              <label for="birthday" class="py-1">Birthday:</label>
+            </div>
+            <div class="form-group col-md-3 px-3">
+                <select id="birthDate" class="form-control form-select"
+              placeholder="day"
+             name="birthDate" ngModel required >
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+               <option value="11">11</option>
+               <option value="12">12</option>
+               <option value="13">13</option>
+               <option value="14">14</option>
+               <option value="15">15</option>
+               <option value="16">16</option>
+               <option value="17">17</option>
+               <option value="18">18</option>
+               <option value="19">19</option>
+               <option value="20">20</option>
+               <option value="21">21</option>
+               <option value="22">22</option>
+               <option value="23">23</option>
+               <option value="24">24</option>
+               <option value="25">25</option>
+               <option value="26">26</option>
+               <option value="27">27</option>
+               <option value="28">28</option>
+               <option value="29">29</option>
+               <option value="30">30</option>
+               <option value="31">31</option>
+
+             </select>
+
+            </div>
+
+
+
+            <div class="form-group col-md-3">
+              <select id="birthMonth" class="form-control form-select"
+              placeholder="month"
+             name="birthMonth" ngModel required >
+               <option value="1">Jan</option>
+               <option value="2">Feb</option>
+               <option value="3">Mar</option>
+               <option value="4">Apr</option>
+               <option value="5">May</option>
+               <option value="6">Jun</option>
+               <option value="7">Jul</option>
+               <option value="8">Aug</option>
+               <option value="9">Sep</option>
+               <option value="10">Oct</option>
+               <option value="11">Nov</option>
+               <option value="12">Dec</option>
+
+             </select>
+            </div>
+            <div class="form-group col-md-3">
+              <input
+              style="margin-left: 20px;"
+                type="text"
+                class="form-control"
+                placeholder="year"
+                name="year"
+                ngModel
+                required
+              />
+            </div>
+          </div>
+<hr>
+          <div class="row mt-2">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="e.g. username@tcs.com"
+                name="email"
+                pattern="^[a-zA-Z0-9]+@tcs\.[a-zA-z]+$"
+                title="Please provide only a tcs email address"
+                ngModel
+                required
+              />
+              <span id="passwordHelpInline" >
+                Must be  only @tcs.com corporate e-mail address.
+              </span>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="e.g. abcd123@"
+                aria-describedby="passwordHelpInline"
+                name="password"
+                maxlength="8"
+                title="provide correct password"
+                ngModel
+                required
+              />
+              <span id="passwordHelpInline" >Must be 6-8 characters long.</span>
+            </div>
+          </div>
+      <hr>
+          <fieldset>
+            <h5>Address :</h5>
+          <div [ngModelGroup]="true?'userAddress':'null'" #userAddress="ngModelGroup">
+            <div class="form-group col-md-6 px-5">
+              <label for="inputAddress">Address 1 :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address1"
+                placeholder="1234 Main St"
+                name="address1"
+                ngModel
+                required
+              />
+            </div>
+            <div class="form-group col-md-6 px-5 mt-2">
+              <label for="inputAddress2">Address 2 :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address2"
+                placeholder="Apartment, studio, or floor"
+                name="address2"
+                ngModel
+                required
+              />
+            </div>
+            <div class="row px-5 mt-2">
+              <div class="form-group col-md-4">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="city" name="city" ngModel required />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="state" class="form-control form-select" name="state" ngModel required >
+                  <option value="maharashtra">Maharashtra</option>
+                  <option value="sikkim">Sikkim</option>
+                  <option value="madhyaPradesh">Madhya Pradesh</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputZip">Zip</label>
+                <input style="margin-left:20px" type="text" class="form-control" id="zip" name="zip" ngModel required />
+              </div>
+            </div>
+            <small *ngIf="!userAddress.valid && userAddress.touched">Enter valid inputs for user data</small>
+          </div>
+      </fieldset>
+          <div class="form-group">
+            <div class="form-check mt-3">
+                <label for="date"> Application Date </label>
+              <input class="form-control" type='date' [min]="startDate" name="date" required ngModel
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-end pt-3">
+              <button
+                type="submit"
+                [disabled]="!myForm.valid"
+                class="btn btn-primary btn-lg me-4 mt-1"
+              >
+                Submit
+              </button>
+              <button type="reset" class="btn btn-warning btn-lg mt-1">
+                Reset Form
+              </button>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="form-group col-md-4">
+          <div class="row justify-content-center mt-2" *ngIf="submit" style="float: right;">
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Address-1</th>
+          <th>Address-2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userItems of userArray">
+          <td>{{userItems.address1}}</td>
+          <td>{{userItems.address2}}</td>
+          <td>{{userItems.city}}</td>
+          <td>{{userItems.state}}</td>
+          <td>{{userItems.zip}}</td>
+        </tr>
+      </tbody>
+          </table>
+            </div>
+            </div></div>
+
+      <hr>
+          <!-- <pre>{{ myForm.value | json }}</pre> -->
+        </form>
+
+
+</body>
+</html>
+
+
+

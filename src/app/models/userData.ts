@@ -4,4 +4,5 @@ export class UserData{
     city:string;
     state:string;
     zip:string;
+
 }

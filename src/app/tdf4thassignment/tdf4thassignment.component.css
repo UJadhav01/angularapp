@@ -1,0 +1,51 @@
+body{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzuk9GskgVIBRLafD-hgeyDF6tyO_eYmLu4g&usqp=CAU');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10px;
+  padding-left: 50px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+
+
+
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched  {
+    border:2px solid rgb(130, 24, 42);
+    box-shadow: 0 0 12px rgba(255,13,45,36);
+  }
+  input.ng-touched,select.ng-touched {
+    border: 2px solid rgb(38, 223, 180);
+    box-shadow: 0 0 12px rgb(205, 243, 52);
+
+  }
+
+  .maindiv{
+    padding-top: 5px;
+    padding-left: 30px;
+    border: 2px solid black;
+    width: 600px;
+    display: flex;
+    float: left;
+  }
+#table{
+  float: left;
+  padding-left: 30px;
+}
+caption{
+  caption-side: top;
+  text-align: center;
+  color: black;
+  font-size: larger;
+  font-style: italic;
+}
+.jsonData{
+  float: left;
+  padding-left: 30px;
+}
+
+input,select,span{
+  width: 400px;
+}

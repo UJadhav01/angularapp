@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDForm-4th-assignment</title>
+</head>
+<body>
+  <h3>User login form :</h3>
+
+  <div class="maindiv">
+    <div class="row">
+      <!-- form creation -->
+      <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <!-- to take email input from user -->
+        <div class="col-md-8">
+          User Email :
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter user email"
+            #email="ngModel"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-z]+$"
+            title="Please provide valid email address"
+            email
+            ngModel
+            required
+          />
+          <!-- to check email is valid or not -->
+          <span
+            class="text-danger"
+            *ngIf="!email.valid && (email.touched || submitted)"
+          >
+            <span *ngIf="email.errors"> User email is required</span></span
+          >
+        </div>
+        <br />
+        <!-- to add selection list dynamically and set default select=Advanced -->
+        <div class="col-md-8">
+          Select Subscription :
+          <select
+            [(ngModel)]="defaultSelected"
+            class="form-control form-select"
+            name="subscription"
+          >
+            <option *ngFor="let item of list" [value]="item">{{ item }}</option>
+          </select>
+        </div>
+        <br />
+        <!-- for take password input from user -->
+        <div class="col-md-8">
+          Password:
+          <input
+            type="text"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter password e.g sgh123@"
+            required
+            #password="ngModel"
+            [(ngModel)]="password.password"
+          />
+          <!-- to check password is valid or not -->
+          <span
+            class="text-danger"
+            *ngIf="!password.valid && (password.touched || submitted)"
+          >
+            <span *ngIf="password.errors">
+              password should not be empty please enter valid password</span
+            ></span
+          >
+        </div>
+        <br />
+        <!-- for take confirm password input from user -->
+        <div class="col-md-8 mt-1">
+          Confirm Password:
+          <input
+            type="text"
+            name="confirmPassword"
+            id="confirmPassword"
+            class="form-control"
+            placeholder="Reenter password e.g sgh123@"
+            required
+            [(ngModel)]="confirmPassword.confirmPassword"
+            #confirmPassword="ngModel"
+          />
+          <!-- to check confirm password is valid or not -->
+          <span
+          class="text-danger"
+            *ngIf="
+              !confirmPassword.valid && (confirmPassword.touched || submitted)
+            "
+          >
+            <span *ngIf="confirmPassword.errors">
+              Confirm password should not be empty</span
+            ></span
+          >
+          <!-- to compare password  -->
+          <span
+            class="text-danger"
+            *ngIf="
+              confirmPassword.confirmPassword != password.password &&
+              !confirmPassword.confirmPassword == ''
+            "
+          >
+            Password does not match, please enter same as password</span
+          >
+        </div>
+        <br /><br />
+        <button type="submit" class="btn btn-success btn-lg">Submit</button
+        ><br /><br />
+        <!-- to check form is valid or touched -->
+        <strong>
+          <span
+            *ngIf="!loginForm.valid && (loginForm.touched || submitted)"
+            class="alert text-danger py-2"
+          >
+            please fill all the field's of form properly...
+          </span>
+        </strong>
+      </form>
+    </div>
+  </div>
+
+  <!-- to display user information -->
+  <div class="col-md-6" id="table">
+    <table class="table table-bordered " style="border: 1px solid black;">
+      <caption>User Information</caption>
+      <thead>
+        <tr>
+          <th>User Email</th>
+          <th>User Subscription</th>
+          <th>Password</th>
+          <th>Confirm Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of arrayOfUser">
+          <td>{{item.email}}</td>
+          <td>{{item.subscription}}</td>
+          <td>{{item.password}}</td>
+          <td>{{item.confirmPassword}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- to see data in text format -->
+<!-- <div class="jsonData">
+  <h3>Data in text format</h3>
+  {{ loginForm.value | json }}
+</div> -->
+
+</body>
+</html>

@@ -36,6 +36,8 @@ import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { StudentRegistrationFormComponent } from './student-registration-form/student-registration-form.component';
 import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.c
     StudentRegistrationFormComponent,
     TdfsecondassComponent,
     Tdf3rdassignmentComponent,
+    ReactiveFormComponent,
+    Tdf4thassignmentComponent,
   ],
   imports: [
     BrowserModule,

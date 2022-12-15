@@ -35,8 +35,8 @@ this.submitted=true;
 if(loginForm.value !== ''){
   console.log(loginForm.value);
 }
-
 //pushing user data into arrayOfUser
 this.arrayOfUser.push(loginForm.value);
+
   }
 }

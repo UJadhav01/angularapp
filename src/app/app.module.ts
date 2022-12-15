@@ -13,9 +13,8 @@ import { SuccessalertComponent } from './successalert/successalert.component';
 import { WarningAlertComponent } from './warningalert/warningalert.component';
 
 import { DirectivedemoComponent } from './directivedemo/directivedemo.component';
-import { StructureDirectiveComponent } from './structure-directive/structure-directive.component';
-import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import {DirectiveAssignmentComponent} from './directive-assignment/directive-assignment.component';
 
 import { ComparepassComponent } from './comparepass/comparepass.component';
 import { ComparepassDirective } from './comparepass.directive';
@@ -38,6 +37,7 @@ import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 
 
 @NgModule({
@@ -49,8 +49,6 @@ import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.c
     HeaderComponent,
     DirectivedemoComponent,
     NgswitchComponent,
-    StructureDirectiveComponent,
-    AttributeDirectiveComponent,
     ComparepassComponent,
     ComparepassDirective,
     DecoratorAssComponent,
@@ -67,6 +65,8 @@ import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.c
     Tdf3rdassignmentComponent,
     ReactiveFormComponent,
     Tdf4thassignmentComponent,
+    HomeComponentComponent,
+    DirectiveAssignmentComponent,
   ],
   imports: [
     BrowserModule,

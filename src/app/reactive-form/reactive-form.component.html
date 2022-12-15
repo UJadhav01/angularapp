@@ -2,6 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-6 py-5">
       <form action="" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userDetails">
         <div class="form-group">
           User Name:
           <input
@@ -15,15 +16,15 @@
           <span
             class="text-danger"
             *ngIf="
-              !myReactiveForm.get('userName').valid &&
-              myReactiveForm.get('userName').touched
+              !myReactiveForm.get('userDetails.userName').valid &&
+              myReactiveForm.get('userDetails.userName').touched
             "
           >
-            <span *ngIf="myReactiveForm.get('userName').errors['required']">
+            <span *ngIf="myReactiveForm.get('userDetails.userName').errors['required']">
               User name is required</span
             >
-            <div *ngIf="myReactiveForm.get('userName').errors['userNameNotAvailable']">
-              {{myReactiveForm.get('userName').value}} is not allowed.
+            <div *ngIf="myReactiveForm.get('userDetails.userName').errors['userNameNotAvailable']">
+              {{myReactiveForm.get('userDetails.userName').value}} is not allowed.
             </div>
           </span>
         </div>
@@ -36,15 +37,23 @@
             class="form-control"
             placeholder="enter user name"
           />
-          <small
-            class="text-danger"
-            *ngIf="
-              !myReactiveForm.get('email').valid &&
-              myReactiveForm.get('email').touched
-            "
-            >please enter user name</small
-          >
+        <!-- to check email is valid or not -->
+        <span
+        class="text-danger"
+        *ngIf="
+          !myReactiveForm.get('userDetails.email').valid &&
+          myReactiveForm.get('userDetails.email').touched
+        "
+      >
+        <span *ngIf="myReactiveForm.get('userDetails.email').errors['required']">
+          email is required</span
+        >
+        <div *ngIf="myReactiveForm.get('userDetails.email').errors['emailNotAllowed']">
+          {{myReactiveForm.get('userDetails.email').value}} is not allowed.
         </div>
+      </span>
+        </div>
+      </div>
         <br /><br />
 
         <div class="form-group  mt-3">
@@ -74,6 +83,10 @@
         </div>
         <button class="btn btn-primary">submit</button>
       </form>
+    </div>
+
+    <div class="row" *ngIf="submitted">
+      <p></p>
     </div>
   </div>
 </div>

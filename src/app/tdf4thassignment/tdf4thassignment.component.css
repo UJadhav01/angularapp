@@ -17,8 +17,7 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched  {
   }
   input.ng-touched,select.ng-touched {
     border: 2px solid rgb(38, 223, 180);
-    box-shadow: 0 0 12px rgb(205, 243, 52);
-
+    box-shadow: 0 0 12px rgb(85, 86, 81);
   }
 
   .maindiv{

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Courses } from '../models/courses';
+import { EmployeeInfo } from '../models/employeeInfo';
 import { Vehicle } from '../models/vehicle';
 
 @Component({
@@ -8,29 +9,38 @@ import { Vehicle } from '../models/vehicle';
   styleUrls: ['./output-decorator.component.css']
 })
 export class OutputDecoratorComponent implements OnInit {
-  @Output() vegetables:EventEmitter<string>=new EventEmitter<string>();
+  employeeInfo:EmployeeInfo=new EmployeeInfo();
+  empObject1=[]; //main array
 
-  @Output() newCourses:EventEmitter<Object>=new EventEmitter<Object>();
+  constructor() {
+    //for single object
+    // this.employeeInfo.emp_id=1;
+    // this.employeeInfo.emp_name='Shiv';
+    // this.employeeInfo.emp_salary=60000;
+    // this.employeeInfo.emp_company='tcs';
+    // this.employeeInfo.emp_department='developer';
 
-  courses:Courses[]=[];
+    this.empObject1.push({ emp_id:1,emp_name:'ashu',emp_salary:20000,emp_company:'tcs',emp_department:'hr'});
+    this.empObject1.push({ emp_id:2,emp_name:'raj',emp_salary:30000,emp_company:'infy',emp_department:'developer'});
+    this.empObject1.push({ emp_id:3,emp_name:'jay',emp_salary:40000,emp_company:'wipro',emp_department:'finance'});
+    this.empObject1.push({ emp_id:4,emp_name:'vijay',emp_salary:50000,emp_company:'codemind',emp_department:'testing'});
+    this.empObject1.push({ emp_id:5,emp_name:'jack',emp_salary:60000,emp_company:'cognizent',emp_department:'backend'});
 
-    constructor(){
-      this.courses.push({courseId:1,courseName:'Complete front-end web development',courseContent:'HTML,CSS,JS,Angular',
-      youCanGetJobAs:'Front-end developer'});
-      this.courses.push({courseId:2,courseName:'Complete back-end development',courseContent:'any lag. Java,Python ,C#,ruby',youCanGetJobAs:'back-end developer'}),
-      this.courses.push({courseId:3,courseName:'Azure',courseContent:'database/data mining/data warehousing tools etc.',youCanGetJobAs:'Data engineer'});
-
-
-    }
-  ngOnInit() {
   }
-  onSendVeg(value1){
-    // vegetables is nothing but your custom event (vegetables)
-    this.vegetables.emit(value1);
+  ngOnInit(): void {
   }
 
-  onGetObject(){
-this.newCourses.emit(this.courses);
+  arrayOfVeg:string[]=['Tomato','Potato'];
+  newArrayOfCourses:any[]=[];
+
+  getDataFromChild(event){
+    this.arrayOfVeg.push(event);
+  }
+
+
+  getDataFromObject(value){
+this.newArrayOfCourses=value;
+
   }
 
 }

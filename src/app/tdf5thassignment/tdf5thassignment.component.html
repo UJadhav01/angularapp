@@ -1,0 +1,298 @@
+<!-- Assignments
+Create a registration form that contains the following fields.
+REQUIREMENTS:
+ First Name [Required, Min 5 and max 5 char]
+ Last Name [Max 10 char]
+ Age [Required, B/W 17-20]
+ Email [Required, Validate email]
+ Phone [Max 10, Allow only numbers]
+ City (Dropdown) Options:['Mumbai','Kolkata','Delhi']
+ Gender [Required]
+ Password [Required]
+ Confirm Password [Required]
+
+Assignments
+INSTRUCTIONS:
+ . Should validate using angular Form group.
+ . Can style using any CSS framework like bootstrap.
+ . Focus on completing functionality first.
+ . Style using CSS .
+-->
+<div class="maindiv">
+  <h3>Student registration form</h3>
+  <form #myForm="ngForm" (ngSubmit)="onStudRegistration(myForm)">
+    <div ngModelGroup="userDetails" #userDetails="ngModelGroup" class="innerdiv">
+      <div class="row">
+        <div class="form-group mt-2 col-md-6">
+          <label for="firstName">First Name :</label>
+          <input
+            type="text"
+            #firstName="ngModel"
+            name="firstName"
+            placeholder="First name"
+            class="form-control"
+            [(ngModel)]="firstName.firstName"
+            required
+          />
+          <small
+            class="text-danger"
+            *ngIf="!firstName.valid && (firstName.touched || submitted)" >
+            First name should not be empty </small>
+          <small
+            class="text-danger"
+            *ngIf="firstName.firstName?.length < 5 && !firstName.firstName?.length == '' ">
+            First name should not be less than 5 characters
+          </small>
+
+          <small class="text-danger"
+          *ngIf="firstName.firstName?.length > 5">
+            First name should not be greater than 5 characters</small>
+
+        </div>
+
+        <div class="form-group mt-2 col-md-6">
+          <label for="lastName">Last Name :</label>
+          <input
+            type="text"
+            #lastName="ngModel"
+            name="lastName"
+            placeholder="Last name"
+            class="form-control"
+            [(ngModel)]="lastName.lastName"
+            required
+          />
+          <small
+            class="text-danger"
+            *ngIf="lastName && !lastName.valid && (lastName.touched || submitted)">
+            Last name should not be empty
+          </small>
+
+          <small class="text-danger"
+          *ngIf="lastName.lastName?.length > 10">
+            Last name should not be greater than 10 characters</small
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group mt-2 col-md-6">
+          <label for="age">Age :</label>
+          <input
+            type="text"
+            #age="ngModel"
+            name="age"
+            placeholder="age e.g. 18"
+            class="form-control"
+            [(ngModel)]="age.age"
+            required
+          />
+          <small
+            class="text-danger"
+            *ngIf="!age.valid && (age.touched || submitted)" >
+            Age should not be empty </small>
+          <small
+            class="text-danger"
+            *ngIf="age.age< 17 && !age.age == '' ">
+            Age should not be less than 17
+          </small>
+
+          <small class="text-danger"
+          *ngIf="age.age> 20">
+            Age should not be greater than 20 </small>
+
+        </div>
+
+        <!-- to take email input from user -->
+        <div class="form-group mt-2 col-md-6">
+          User Email :
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter user email"
+            #email="ngModel"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-z]+$"
+            title="Please provide valid email address"
+            email
+            ngModel
+            required
+          />
+          <!-- to check email is valid or not -->
+          <span
+            class="text-danger"
+            *ngIf="!email.valid && (email.touched || submitted)"
+          >
+            <span *ngIf="email.errors"> Enter valid email is required</span></span
+          >
+        </div>
+      </div>
+
+  <div class="row">
+  <div class="form-group mt-3 col-md-6">
+    <label for="phone">Phone No.:</label>
+          <input
+            type="text"
+            #phone="ngModel"
+            name="phone"
+            placeholder="phone e.g. 9999999999"
+            class="form-control"
+            [(ngModel)]="phone.phone"
+            required
+          />
+          <small
+            class="text-danger"
+            *ngIf="!phone.valid && (phone.touched || submitted)" >
+            Phone number should not be empty </small>
+          <small
+            class="text-danger"
+            *ngIf="phone.phone?.length> 10 && !phone.phone?.length == ''">
+            Phone number not greater than 10 numbers
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="phone.phone?.length< 10 && !phone.phone?.length == ''">
+            Phone number must be 10 numbers
+          </small>
+  </div>
+  <div class="form-group mt-3 col-md-6">
+    <label for="city">City :</label>
+    <select name="city" id="city"
+    class="form-control form-select"
+    [(ngModel)]="defaultSelectedCity" required>
+      <option *ngFor="let item of city" [value]="item">{{item}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <label for="gender" class="mt-3"> Gender :</label>
+  <div
+            *ngFor="let gender of radioArray"
+            class="custom-control custom-radio col-md-2"
+          >
+            <input
+              type="radio"
+              id="{{ gender.id }}"
+              name="gender"
+              value="{{ gender.value }}"
+              [ngModel]="defaultGender"
+              class="custom-control-input"
+            />
+            <label for="{{ gender.id }}" class="custom-control-label">{{
+              gender.value
+            }}</label>
+          </div>
+</div>
+
+      <div class="row ">
+      <!-- for take password input from user -->
+      <div class=" form-group mt-2 col-md-6">
+        Password:
+        <input
+          type="text"
+          name="password"
+          id="password"
+          class="form-control"
+          placeholder="e.g abc123@"
+          required
+          #password="ngModel"
+          [(ngModel)]="password.password"
+        />
+        <!-- to check password is valid or not -->
+        <span
+          class="text-danger"
+          *ngIf="!password.valid && (password.touched || submitted)"
+        >
+          <span *ngIf="password.errors">
+            password should not be empty please enter valid password</span
+          ></span
+        >
+      </div>
+      <!-- for take confirm password input from user -->
+      <div class="col-md-6 mt-1">
+        Confirm Password:
+        <input
+          type="text"
+          name="confirmPassword"
+          id="confirmPassword"
+          class="form-control"
+          placeholder="e.g abc123@"
+          required
+          [(ngModel)]="confirmPassword.confirmPassword"
+          #confirmPassword="ngModel"
+        />
+        <!-- to check confirm password is valid or not -->
+        <span
+        class="text-danger"
+          *ngIf="
+            !confirmPassword.valid && (confirmPassword.touched || submitted)
+          "
+        >
+          <span *ngIf="confirmPassword.errors">
+            Confirm password should not be empty</span
+          ></span
+        >
+        <!-- to compare password  -->
+        <span
+          class="text-danger"
+          *ngIf="
+            confirmPassword.confirmPassword != password.password &&
+            !confirmPassword.confirmPassword == ''
+          "
+        >
+          Password does not match, please enter same as password</span
+        >
+      </div>
+    </div>
+
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">Submit</button
+      >
+      <button type="reset" class="btn btn-success btn-lg " style="margin-left: 20px;">Reset</button
+        ><br /><br />
+      <!-- to check form is valid or touched -->
+      <strong>
+        <span
+          *ngIf="!userDetails.valid && (userDetails.touched || submitted)"
+          class="alert text-danger py-2 pt-2"
+        >
+          please fill all the field's of form properly...
+        </span>
+      </strong>
+
+  </form>
+  <br>
+   <!-- to display user information -->
+   <div class="col-md-6" id="table">
+    <table class="table table-bordered " style="border: 1px solid black;">
+      <caption >Student Registration Information</caption>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last name</th>
+          <th>Age</th>
+          <th>Email id</th>
+          <th>Phone No.</th>
+          <th>City</th>
+          <th>Gender</th>
+          <th>Password</th>
+          <th>Confirm Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of userArray">
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.age}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.city}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.password}}</td>
+          <td>{{item.confirmPassword}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</div>

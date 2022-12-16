@@ -38,6 +38,8 @@ import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.c
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.component';
+import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive1stassignment.component';
 
 
 @NgModule({
@@ -67,6 +69,8 @@ import { HomeComponentComponent } from './home-component/home-component.componen
     Tdf4thassignmentComponent,
     HomeComponentComponent,
     DirectiveAssignmentComponent,
+    Tdf5thassignmentComponent,
+    Reactive1stassignmentComponent,
   ],
   imports: [
     BrowserModule,

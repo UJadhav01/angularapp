@@ -1,9 +1,32 @@
-<!-- <p>Enter your favorite vegetable name :</p>
-<input type="text" #veg (keyup.enter)="onSendVeg(veg.value)">
-<br> -->
-<p>@Output Decorator (Click on button to show object data get from child to parent)</p>
+  <!-- [employeeInfo]="empObject1"
+  [employeeInfo]="employeeInfo" @Input decorator -->
+  <app-decorator-ass
+  [employeeInfo]="empObject1"
 
-<div class="childElement">
-  <button (click)="onGetObject()" class="btn btn-success">Show Object Data</button>
-</div>
+  (newCourses)="getDataFromObject($event)"
+  (vegetables)="getDataFromChild($event)"></app-decorator-ass>
+  <!-- (newCourses)="getDataFromObject($event)" for @output decorator-->
 
+
+  <div class="mainDiv">
+    <table class="table table-bordered">
+<thead>
+  <tr>
+    <th>Course Id</th>
+    <th>Course Name</th>
+    <th>Course Content</th>
+    <th>Job Title</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let courseItems of newArrayOfCourses">
+    <td>{{courseItems.courseId}}</td>
+    <td>{{courseItems.courseName}}</td>
+    <td>{{courseItems.courseContent}}</td>
+    <td>{{courseItems.youCanGetJobAs}}</td>
+
+  </tr>
+</tbody>
+    </table>
+
+  </div>

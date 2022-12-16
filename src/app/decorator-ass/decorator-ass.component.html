@@ -1,6 +1,6 @@
 <!-- for single object
 
-  <div class="table">
+   <div class="table">
   <h2>Data from parent component :</h2>
 
 <div *ngFor="let key of transformedBody">
@@ -10,6 +10,8 @@
 
 <!-- for multiple objects -->
 <div>
+  <p>@Input Decorator, getting employee data from parent output-decorator</p>
+
   <table class="table">
     <caption style="font-weight:900;text-align :center">Data from parent component</caption>
     <thead>
@@ -32,4 +34,10 @@
   </tr>
 </tbody>
   </table>
+</div>
+<hr>
+<p>@Output Decorator (Click on button to show object data get from child(decorator-ass-component) to parent)</p>
+
+<div class="childElement">
+  <button (click)="onGetObject()" class="btn btn-success">Show Object Data</button>
 </div>

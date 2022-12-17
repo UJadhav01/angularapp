@@ -1,9 +1,10 @@
 .maindiv{
-    border: 2px solid black;
+    border: 2px solid white;
     margin-top: 40px;
     width: fit-content;
     padding: 5px;
-    background-color:lightcyan;
+    background-color:transparent;
+    color: white;
 }
 fieldset{
     border: 1px solid black;
@@ -23,7 +24,8 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched {
     background-color: transparent;
   }
 form input,form select{
-    border: 1px solid black;
+    border: 1px solid white;
+    background-color: transparent;
 
 }
 table{

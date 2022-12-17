@@ -40,6 +40,10 @@ import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.c
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.component';
 import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive1stassignment.component';
+import { HtmlNotesComponent } from './html-notes/html-notes.component';
+import { CssNotesComponent } from './css-notes/css-notes.component';
+import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.component';
+import { AngularNotesComponent } from './angular-notes/angular-notes.component';
 
 
 @NgModule({
@@ -71,6 +75,10 @@ import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive
     DirectiveAssignmentComponent,
     Tdf5thassignmentComponent,
     Reactive1stassignmentComponent,
+    HtmlNotesComponent,
+    CssNotesComponent,
+    TypescriptNotesComponent,
+    AngularNotesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-image: url('https://www.howtogeek.com/wp-content/uploads/2019/05/img_5cf05d111ada0.png?width=1198&trim=1,1&bg-color=000&pad=1,1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
+}
+

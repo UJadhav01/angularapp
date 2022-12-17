@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
+import { AngularNotesComponent } from './angular-notes/angular-notes.component';
 import { ComparepassComponent } from './comparepass/comparepass.component';
+import { CssNotesComponent } from './css-notes/css-notes.component';
 import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
 import { DirectivedemoComponent } from './directivedemo/directivedemo.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { HtmlNotesComponent } from './html-notes/html-notes.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
@@ -17,13 +20,14 @@ import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.c
 import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.component';
 import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.component';
 
 
 const routes: Routes = [
-  {path: 'htmlnotes', component: NgswitchComponent},
-  {path: 'cssnotes', component: NgswitchComponent},
-  {path: 'typescriptnotes', component: NgswitchComponent},
-  {path: 'angularnotes', component: NgswitchComponent},
+  {path: 'htmlnotes', component: HtmlNotesComponent},
+  {path: 'cssnotes', component: CssNotesComponent},
+  {path: 'typescriptnotes', component: TypescriptNotesComponent},
+  {path: 'angularnotes', component: AngularNotesComponent},
 
   {path: 'dir-demo', component: DirectivedemoComponent},
   {path: 'dir-ng-switch', component: NgswitchComponent},

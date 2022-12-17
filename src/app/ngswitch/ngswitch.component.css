@@ -1,0 +1,16 @@
+.card{
+  width: 400px;
+  background-color: transparent;
+  border-color: white;
+  font-size: 18px;
+}
+.card-header{
+  border-color: white;
+  font-size: 18px;
+
+}
+select,input{
+  background-color: transparent;
+  border-color: white;
+  font-size: 18px;
+}

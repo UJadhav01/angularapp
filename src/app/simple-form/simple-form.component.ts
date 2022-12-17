@@ -19,6 +19,7 @@ export class SimpleFormComponent implements OnInit {
   constructor() { }
   defaultselected='Angular'
   submitData=false;
+  username:string;
   userData=new UserData();
   defaultGender:string='Male'
   radioArray=[

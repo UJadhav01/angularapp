@@ -12,10 +12,10 @@
   <div class="col-md-12">
     <div [ngSwitch]="selectedProduct">
     <div *ngSwitchDefault>Please select product</div>
-    <div *ngSwitchCase="mobile">Mobile</div>
-    <div *ngSwitchCase="TV">TV</div>
-    <div *ngSwitchCase="washingmachine">Washing Machine</div>
-    <div *ngSwitchCase="laptop">Laptop</div>
+    <div *ngSwitchCase="'mobile'">Mobile</div>
+    <div *ngSwitchCase="'TV'">TV</div>
+    <div *ngSwitchCase="'washingmachine'">Washing Machine</div>
+    <div *ngSwitchCase="'laptop'">Laptop</div>
 </div>
   </div><br><br>
 <div class="card">

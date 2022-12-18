@@ -1,11 +1,12 @@
 #routsExample{
   margin-left: 310px;
   margin-top: 9vh;
+  /* overflow: hidden; */
 }
 
 
 
-h2{
+/* h2{
   color: rgb(189, 28, 124);
 }
 p{
@@ -13,8 +14,8 @@ p{
   font-size: 18px;
   margin-left: 20px;
   margin-right: 20px;
-}
-p span{
+} */
+/* p span{
   font-weight: 700;
   font-size: large;
 }
@@ -34,5 +35,5 @@ tr:hover {background-color: #D6EEEE;}
   width: fit-content;
   margin: 50px;
   background-color: rgb(237, 235, 236);
-}
+} */
 

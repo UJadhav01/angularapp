@@ -1,9 +1,6 @@
 body{
-
-  padding-top: 10px;
-  padding-left: 50px;
-  width: 100vw;
-  height: 100vh;
+padding: 0;
+margin: 0;
 }
 
 
@@ -18,16 +15,21 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched  {
     box-shadow: 0 0 12px rgb(85, 86, 81);
   }
 
+  h3{
+    margin-left: 30px;
+
+  }
   .maindiv{
     padding-top: 5px;
     padding-left: 30px;
+    margin-left: 30px;
     border: 2px solid black;
     width: 600px;
     display: flex;
     float: left;
+    position: relative;
   }
 #table{
-  float: left;
   padding-left: 20px;
   width: fit-content;
 }
@@ -39,10 +41,18 @@ caption{
   font-style: italic;
 }
 .jsonData{
-  float: left;
   padding-left: 30px;
 }
 
 input,select,span{
   width: 400px;
+}
+
+@media print{
+  .doNotPrint{display:none !important;}
+
+}
+#printData{
+  padding-left: 20px;
+  width: fit-content;
 }

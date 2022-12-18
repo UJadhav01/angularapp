@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TDForm-4th-assignment</title>
 </head>
-<body>
-  <h3>User login form :</h3>
+<body style="border: none;">
+  <h3 class="doNotPrint">User login form :</h3>
 
-  <div class="maindiv">
+  <div class="maindiv doNotPrint">
     <div class="row">
       <!-- form creation -->
       <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
@@ -128,7 +128,7 @@
   </div>
 
   <!-- to display user information -->
-  <div class="col-md-6" id="table">
+  <div class="col-md-6 " id="table">
     <table class="table table-bordered " style="border: 1px solid black;">
       <caption>User Information</caption>
       <thead>
@@ -148,12 +148,16 @@
         </tr>
       </tbody>
     </table>
+    <button class="doNotPrint btn btn-success btn-lg" id="printData margin-left" (click)="onPrint()">Print User Data</button>
+
 </div>
 <!-- to see data in text format -->
 <!-- <div class="jsonData">
   <h3>Data in text format</h3>
   {{ loginForm.value | json }}
 </div> -->
+<br><br><br><br><br>
+
 
 </body>
 </html>

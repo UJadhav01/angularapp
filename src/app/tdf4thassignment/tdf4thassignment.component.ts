@@ -39,4 +39,8 @@ if(loginForm.value !== ''){
 this.arrayOfUser.push(loginForm.value);
 
   }
+  onPrint(){
+    window.print();
+
+  }
 }

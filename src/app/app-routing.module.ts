@@ -13,6 +13,9 @@ import { OutputDecoratorComponent } from './output-decorator/output-decorator.co
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive1stassignment.component';
+import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
+import { ServiceDemoComponent } from './service-demo/service-demo.component';
+import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { StudentRegistrationFormComponent } from './student-registration-form/student-registration-form.component';
 import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.component';
@@ -49,9 +52,10 @@ const routes: Routes = [
 
   {path: 'reactive-form', component: ReactiveFormComponent},
   {path: 'reactive-1st-ass', component: Reactive1stassignmentComponent},
+  {path:'reactive-2nd-ass',component:Reactive2ndAssignmentComponent},
 
-
-
+  {path:'demo-service-1',component:ServiceDemoComponent},
+  {path:'demo-service-2',component:ServiceDemo2Component},
 
   {path: 'home', component: HomeComponentComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },

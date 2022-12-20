@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,16 +12,21 @@ export class ReactiveFormComponent implements OnInit {
   myReactiveForm:FormGroup;
 
   radioArray=[
-    {id:'1',value:'Male'},
-  {id:'2',value:'Female'},
-  {id:'3',value:'Other'}
+  {
+    id:'1',value:'Male'
+  },
+  {
+    id:'2',value:'Female'
+  },
+  {
+    id:'3',value:'Other'
+  }
 ]
 
 userNames:any = ['codemind', 'technology', 'codemind technology'];
 
-  constructor() {
+  constructor(private _fb:FormBuilder) {
     this.onCreateForm();
-
    }
 
   ngOnInit() {
@@ -37,14 +42,15 @@ userNames:any = ['codemind', 'technology', 'codemind technology'];
 //     }, 3500);
 
 
-    setTimeout(() => {
-      this.myReactiveForm.patchValue({
-        'userDetails' : {
-          'userName': 'Codemind1122',
-          'email': 'test@gmail.com'
-        }
-      })
-    }, 3500);
+//for setting default values
+    // setTimeout(() => {
+    //   this.myReactiveForm.patchValue({
+    //     'userDetails' : {
+    //       'userName': 'Codemind1122',
+    //       'email': 'test@gmail.com'
+    //     }
+    //   })
+    // }, 3500);
 
   }
   selectedValue="";
@@ -57,8 +63,27 @@ onCreateForm(){
     }),
 
 'course':new FormControl('Angular'),
-'gender':new FormControl('Male')
+'gender':new FormControl('Male'),
+'skills':new FormArray([new FormControl()])
   })}
+
+  // this.myReactiveForm = this._fb.group({
+  //   userDetails: this._fb.group({
+  //     username: ['', Validators.required],
+  //     email: ['', Validators.required]
+  //   }),
+  //   course: ['Angular'],
+  //   gender: ['Male'],
+  //   skills: this._fb.array([])
+  // }),
+
+  OnAddSkills(){
+    (<FormArray> this.myReactiveForm.get('skills')).push(new FormControl());
+  }
+
+  OnRemoveSkills(removeSkill){
+    (<FormArray> this.myReactiveForm.get('skills')).removeAt(removeSkill);
+  }
 
   onSubmit(){
 console.log(this.myReactiveForm);

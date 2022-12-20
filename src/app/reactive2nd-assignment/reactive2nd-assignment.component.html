@@ -1,0 +1,75 @@
+<h3>Project detail form</h3>
+<!--
+ Create a Form with the following Controls and Validators
+ 1) Project Name (should not be empty)
+ 2) Mail (should not be a empty and a valid email)
+ 3) Project Status Dropdown, with three values: 'Stable', 'Critical', 'Finished'
+ 4) Submit Button
+ Add your own Validator which doesn't allow "Test" as a Project Name
+ Also implement that Validator as an async Validator (replace the other one)
+ Upon submitting the form, simply print the value to the console.log
+ -->
+
+ <div>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="projectInfo">
+      <div class="form-group col-md-4">
+        <label for="projectName">Project Name :</label>
+        <input
+        type="text"
+        formControlName="projectName"
+        class="form-control"
+        placeholder="project name">
+
+        <span class="text-danger"
+         *ngIf="projectForm.get('projectInfo.projectName').invalid &&
+        projectForm.get('projectInfo.projectName').touched || submitted" >
+
+        <span *ngIf="projectForm.get('projectInfo.projectName').errors?.required">
+          Project name should not be empty</span>
+
+        <span class="text-danger"
+         *ngIf="projectForm.get('projectInfo.projectName').errors?.notallowed">
+          {{projectForm.get('projectInfo.projectName').value}} is not allowed for project name</span>
+        </span>
+      </div>
+
+      <div class="form-group col-md-4 mt-3">
+        <label for="email">Email Id :</label>
+        <input type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="abc@gmail.com">
+
+        <!-- to check email is valid or not -->
+        <span
+        class="text-danger"
+        *ngIf="projectForm.get('projectInfo.email').invalid &&
+        projectForm.get('projectInfo.email').touched || submitted"
+      >
+        <span *ngIf="projectForm.get('projectInfo.email').errors?.required">
+           Enter valid email is required</span>
+           <span *ngIf="projectForm.get('projectInfo.email').errors?.pattern">
+            Please enter valid email</span>
+          </span >
+      </div>
+
+    <div class="form-group col-md-3 mt-3">
+      <label for="projectStatus">Project Status :</label>
+  <select
+  formControlName="proStatus"
+  id="proStatus"
+  class="form-control form-select">
+    <option value="'Stable'">Stable</option>
+    <option value="'Critical'">Critical</option>
+    <option value="'Finished'">Finished</option>
+  </select>
+</div>
+
+</div>
+<button class="btn btn-success mt-3 mb-4">submit</button>
+
+  </form>
+<!-- to check form is valid or touched -->
+
+ </div>

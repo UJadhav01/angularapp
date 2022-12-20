@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import{HttpClientModule} from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
@@ -44,6 +46,9 @@ import { HtmlNotesComponent } from './html-notes/html-notes.component';
 import { CssNotesComponent } from './css-notes/css-notes.component';
 import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.component';
 import { AngularNotesComponent } from './angular-notes/angular-notes.component';
+import { ServiceDemoComponent } from './service-demo/service-demo.component';
+import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
+import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
 
 
 @NgModule({
@@ -79,6 +84,9 @@ import { AngularNotesComponent } from './angular-notes/angular-notes.component';
     CssNotesComponent,
     TypescriptNotesComponent,
     AngularNotesComponent,
+    ServiceDemoComponent,
+    ServiceDemo2Component,
+    Reactive2ndAssignmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +94,8 @@ import { AngularNotesComponent } from './angular-notes/angular-notes.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

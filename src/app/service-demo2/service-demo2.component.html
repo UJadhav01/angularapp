@@ -1,0 +1,23 @@
+
+<div>
+  <h2>Dta from service demo-service</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title of Movie</th>
+        <th>Name of director</th>
+        <th>Casts</th>
+        <th>Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of movieSamples">
+        <td>{{item.title}}</td>
+        <td>{{item.director}}</td>
+        <td>{{item.cast}}</td>
+        <td>{{item.releaseDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

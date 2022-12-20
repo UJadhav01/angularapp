@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background-image: url('https://c4.wallpaperflare.com/wallpaper/442/976/931/smooth-heart-background-white-hearts-illustration-wallpaper-preview.jpg');
+  background-image: url('../src/assets/background-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 100%;
   position:relative;
 }
 

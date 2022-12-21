@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoServiceService } from '../demo-service.service';
+import { DemoServiceService } from '../all-services/demo-service.service';
 
 @Component({
   selector: 'app-service-demo',
@@ -11,7 +11,7 @@ export class ServiceDemoComponent implements OnInit {
   movieSamples={};
 
   apiData={};
-  apiDetails:any;
+  apiDetails:any=[];
   constructor(private _serviceIn:DemoServiceService,
     private _demoService: DemoServiceService
     ) { }
@@ -20,13 +20,18 @@ export class ServiceDemoComponent implements OnInit {
     this.movieSamples=this._serviceIn.movie;
 
       this._demoService.getUsersData().subscribe(data => {
-        console.log('getting data from api', data)
+        console.log('getting data from api,for 10 users', data)
         this.apiData=data;
         console.log(this.apiData);
 
         this.apiDetails=data;
-      })
+      });
+      this._demoService.getPostUsersData().subscribe(userPostData=>{
+        console.log('getting data from api for posts,for 100 users',userPostData);
+
+      });
     }
+
   }
 
 

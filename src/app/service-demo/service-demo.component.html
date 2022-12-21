@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of apiData">
+      <tr *ngFor="let item of apiDetails ">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.username}}</td>
@@ -48,6 +48,8 @@
           {{" suite :"+item.address.suite}} <br>
           {{" zipcode :"+item.address.zipcode}}
         </td>
+
+
         <td>{{"bs : "+item.company.bs}} <br>
           {{" catchPhrase : "+item.company.catchPhrase}} <br>
           {{" name : "+item.company.name}}</td>

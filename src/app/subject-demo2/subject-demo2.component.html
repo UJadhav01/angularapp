@@ -1,0 +1,24 @@
+
+<div style="margin-left: 20px;"><p>subject-demo2 works!</p><br>
+<!-- Employee id : <input type="number" #empId name="epId" [(ngModel)]="epId"><br><br>
+Employee Name : <input type="text" #empName name="epName" [(ngModel)]="epName"><br><br>
+Employee Company : <input type="text" #empCmp name="epCmp" [(ngModel)]="epCmp"><br><br>
+Employee Department : <input type="text" #empDept name="epDept" [(ngModel)]="epDept"><br><br>
+Employee Position : <input type="text" #empRole name="epRole" [(ngModel)]="epRole"><br><br>
+
+<div>
+  <button type="button" (click)="onUpdate(empId.value,empName.value,empCmp.value,empDept.value,empRole.value)">Pass Data</button>
+ </div> -->
+
+
+ <p *ngFor="let item of employeeArray">
+  Employee Id = {{item.epId}} <br>
+  Employee Name = {{item.epName}} <br>
+  Employee Company = {{item.epCmp}} <br>
+  Employee Department = {{item.epDept}} <br>
+  Employee Position = {{item.epRole}}</p>
+
+  <div>
+    <button type="button" (click)="onUpdate()">Update Data from component-2</button>
+   </div>
+</div>

@@ -18,6 +18,7 @@ import { ServiceDemoComponent } from './service-demo/service-demo.component';
 import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { StudentRegistrationFormComponent } from './student-registration-form/student-registration-form.component';
+import { SubjectDemo1Component } from './subject-demo1/subject-demo1.component';
 import { Tdf3rdassignmentComponent } from './tdf3rdassignment/tdf3rdassignment.component';
 import { Tdf4thassignmentComponent } from './tdf4thassignment/tdf4thassignment.component';
 import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.component';
@@ -56,6 +57,8 @@ const routes: Routes = [
 
   {path:'demo-service-1',component:ServiceDemoComponent},
   {path:'demo-service-2',component:ServiceDemo2Component},
+
+  {path:'subject-demo',component:SubjectDemo1Component},
 
   {path: 'home', component: HomeComponentComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },

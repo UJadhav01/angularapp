@@ -49,6 +49,8 @@ import { AngularNotesComponent } from './angular-notes/angular-notes.component';
 import { ServiceDemoComponent } from './service-demo/service-demo.component';
 import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
+import { SubjectDemo1Component } from './subject-demo1/subject-demo1.component';
+import { SubjectDemo2Component } from './subject-demo2/subject-demo2.component';
 
 
 @NgModule({
@@ -87,6 +89,8 @@ import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactiv
     ServiceDemoComponent,
     ServiceDemo2Component,
     Reactive2ndAssignmentComponent,
+    SubjectDemo1Component,
+    SubjectDemo2Component,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,89 @@
+<h4>Built in pipe examples :</h4>
+<div class="d1">
+<p>Date pipe-examples...!</p>
+
+<!-- displaying date in original format -->
+Original Date : <strong>{{date}}</strong>  <br>
+
+<!-- displaying date in readable format -->
+Date in date format : <strong>{{date | date}}</strong>  <br>
+
+<!-- displaying date in readable format -->
+Date in Short & Uppercase format : <strong> {{date | date: 'short' | uppercase}} </strong><br>
+
+<!-- displaying date in user format -->
+Date in user defined format : <strong> {{date | date : 'd/m/yy'}} </strong><br>
+
+<!-- displaying date in readable format -->
+Date in full & lowercase format : <strong> {{date | date: 'fullDate' | lowercase}}</strong> <br>
+</div><hr>
+<div class="d2">
+<p>Currency pipe-examples...!</p>
+<!-- displaying original amount -->
+ Amount : {{amount}} <br>
+
+ <!-- displaying amount in inr format -->
+ Amount In Indian Currency : <strong>{{amount | currency: 'INR'}} </strong> <br>
+
+ <!-- displaying amount in ero format -->
+ Amount In United States Currency  : <strong> {{amount | currency:'USD' }} </strong><br>
+
+  <!-- displaying amount in european format -->
+
+  Amount In European Currency  : <strong> {{amount | currency:'CHF'}} </strong><br>
+
+   <!-- displaying amount in chile peso format -->
+   Amount In Chile Currency  : <strong> {{amount | currency :'CLP'}} </strong><br>
+
+   <!-- displaying amount in ero format -->
+   Amount In yuan Currency  : <strong> {{amount | currency :'CNY':'symbol'}}</strong> <br>
+  </div><hr>
+  <div class="d3">
+ <p>Json pipe-examples...!</p>
+
+ Json Format object :<strong>{{jsonpipe | json}} </strong> <br>
+</div><hr>
+<div class="d4">
+ <p>Percent pipe-examples...!</p>
+
+ Percent pipe : <b>{{0.74565 | percent}}</b> <br>
+ Percent pipe :<b>{{0.9865 | percent}}</b> <br>
+
+</div><hr>
+<div class="d5">
+ <p>Decimal pipe-example...!</p>
+ Decimal pipe : <strong>{{decimalNumber | number:'2.3-3'}}</strong> <!--2 is for main integer, 3 -3 are for integers to be displayed.-->>
+</div>
+<hr>
+<div class="d6">
+ <p> Slice pipe-example...!</p>
+
+Season array : <strong>{{seasons}}</strong> <br>
+Season array slice(2) : <strong>{{seasons | slice:'2'}}</strong> <br> <!-- slice 2 is for getting value from 2nd posion it will return array from given index-->
+Season array slice(1,2) : <strong>{{seasons | slice:1:2}}</strong> <br> <!--return subset of array from given index excluding last index value-->
+Season array slice(0,2) : <strong>{{seasons | slice:0:2}}</strong> <br><!--return array from 0 to 2 excluding last element-->
+</div><hr>
+<div class="d7">
+<p>Uppercasepipe/Lowercase pipe-examples...!</p>
+<!-- displaying original name -->
+ Name : <strong>{{name}}</strong>  <br>
+
+ <!-- displaying name in uppercase format -->
+Name in Uppercase : <strong>{{name| uppercase}}</strong>  <br>
+
+ <!-- displaying name in lowercase format -->
+ Name in Lowercase : <strong>{{name| lowercase}}</strong>  <br>
+</div><hr>
+<div class="d8">
+<span>custome pipe-example for reverse string:</span><br>
+ Greeting Message : <strong>{{greeting}}</strong><br>
+ Reversed Message : <strong>{{greeting | reverseString}}</strong>
+<br><br>
+  <span>custome pipe-example for find vowels in string:</span> <br>
+   Original String : <strong>{{vowelsString}}</strong><br>
+   Vowels in  String : <strong>{{vowelsString | customeVowels}}</strong>
+   <br><br>
+    <span>custome pipe-example for finding number of words present in string:</span> <br>
+     Original String : <strong>{{stringToFindWords}}</strong><br>
+     Number of words in string : <strong>{{stringToFindWords | findWords}}</strong>
+    </div>

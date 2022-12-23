@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
 
@@ -11,7 +12,10 @@ export class EmpService{
   // userName=new BehaviorSubject('Angular');
 
   constructor(){}
-  employee=new Subject<Object>();
+  // employee=new Subject<Object>();
+  employee=new Subject<object>();
+
+
   }
 
 

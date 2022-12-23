@@ -11,6 +11,7 @@ import { HtmlNotesComponent } from './html-notes/html-notes.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive1stassignment.component';
 import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
@@ -60,8 +61,12 @@ const routes: Routes = [
 
   {path:'subject-demo',component:SubjectDemo1Component},
 
+  {path:'pipe-demo',component:PipeDemoComponent},
+
   {path: 'home', component: HomeComponentComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+
 ];
 
 @NgModule({

@@ -1,29 +1,51 @@
 <h4 style="margin-left:300px;">Subject/Behavior Subject Demo</h4>
 
-<div style="display: flex;float: left;border: 1px solid black;width: 450px;padding: 10px;">
+<div style="display: flex;float: left;border: 1px solid black;width: 500px;padding: 10px;">
   <div style="margin-left: 20px;">
     <p>subject-demo1 works!</p><br>
-<!-- Employee id : <input type="number" #empId name="epId" [(ngModel)]="epId"><br><br>
-Employee Name : <input type="text" #empName name="epName" [(ngModel)]="epName"><br><br>
-Employee Company : <input type="text" #empCmp name="epCmp" [(ngModel)]="epCmp"><br><br>
-Employee Department : <input type="text" #empDept name="epDept" [(ngModel)]="epDept"><br><br>
-Employee Position : <input type="text" #empRole name="epRole" [(ngModel)]="epRole"><br><br>
+Employee id : <input type="number" #empId name="epId" ><br><br>
+Employee Name : <input type="text" #empName name="epName" ><br><br>
+Employee Company : <input type="text" #empCmp name="epCmp" ><br><br>
+Employee Department : <input type="text" #empDept name="epDept" ><br><br>
+Employee Position : <input type="text" #empRole name="epRole" ><br><br>
 
 <div>
   <button type="button" (click)="onUpdate(empId.value,empName.value,empCmp.value,empDept.value,empRole.value)">Pass Data</button>
- </div> -->
+ </div>
 
 
- <p *ngFor="let item of employeeArray">
+ <table class="table table-bordered mt-3">
+  <thead>
+      <tr>
+          <td>Employee ID</td>
+          <td>Employee Name</td>
+          <td>Employee Company</td>
+          <td>Employee Department</td>
+          <td>Employee Role</td>
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of employeeArray">
+          <td>{{item.epId}}</td>
+          <td>{{item.epName}}</td>
+          <td>{{item.empCmp}}</td>
+          <td>{{item.epDept}}</td>
+          <td>{{item.epRole}}</td>
+        </tr>
+  </tbody>
+</table>
+<br>
+ <!-- <p *ngFor="let item of employeeArray">
   Employee Id = {{item.epId}} <br>
   Employee Name = {{item.epName}} <br>
   Employee Company = {{item.epCmp}} <br>
   Employee Department = {{item.epDept}} <br>
-  Employee Position = {{item.epRole}}</p>
-  <div>
+  Employee Position = {{item.epRole}}</p> -->
+  <!-- <div>
     <button type="button" (click)="onUpdate()">Update Data from component-1</button>
-   </div>
+   </div> -->
 
   </div>
 </div>
-<div style="float: left;border: 1px solid black; margin-left: 40px;width: 450px; padding: 10px;"><app-subject-demo2></app-subject-demo2></div>
+<div style="float: left;border: 1px solid black; margin-left: 40px;width: 500px; padding: 10px;"><app-subject-demo2></app-subject-demo2></div>

@@ -51,6 +51,10 @@ import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
 import { SubjectDemo1Component } from './subject-demo1/subject-demo1.component';
 import { SubjectDemo2Component } from './subject-demo2/subject-demo2.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { ReverseStringPipe } from './pipe-demo/reverse-string.pipe';
+import { CustomeVowelsPipe } from './pipe-demo/custome-vowels.pipe';
+import { FindWordsPipe } from './pipe-demo/find-words.pipe';
 
 
 @NgModule({
@@ -91,6 +95,10 @@ import { SubjectDemo2Component } from './subject-demo2/subject-demo2.component';
     Reactive2ndAssignmentComponent,
     SubjectDemo1Component,
     SubjectDemo2Component,
+    PipeDemoComponent,
+    ReverseStringPipe,
+    CustomeVowelsPipe,
+    FindWordsPipe,
   ],
   imports: [
     BrowserModule,

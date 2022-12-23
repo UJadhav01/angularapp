@@ -4,4 +4,5 @@ emp_name:string;
 emp_salary:number;
 emp_company:string;
 emp_department:string;
+
 }

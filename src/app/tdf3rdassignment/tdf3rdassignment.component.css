@@ -1,19 +1,19 @@
 body{
 
 font-weight: 700;
-color: white;
+color: black;
 
 }
 
 .maindiv{
-    border: 2px solid white;
+    border: 2px solid black;
     margin-top: 40px;
     width: fit-content;
     padding: 5px;
     font-weight: 700;
 }
 fieldset{
-    border: 2px solid white;
+    border: 2px solid black;
     padding: 5px;
 }
 
@@ -32,17 +32,17 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched {
     background-color: transparent;
   }
 form input{
-    border: 2px solid white;
+    border: 2px solid black;
     font-size: large;
     background-color: transparent;
 }
 
 form select{
-  border: 2px solid white;
+  border: 2px solid black;
   font-size: large;
   background-color: transparent;
   margin-left: 20px;
-  color: white;
+  color: black;
 }
 
 option:not(first-child) {
@@ -66,9 +66,8 @@ form{
 }
 
 ::placeholder {
-  color: white;
   opacity: 1; /* Firefox */
 }
 #passwordHelpInline{
-  color: white;
+  color: green;
 }

@@ -1,0 +1,14 @@
+table.table-bordered{
+  border:1px solid black;
+}
+thead{
+  text-align: center;
+}
+caption{
+text-align: center;
+color: black;
+font-size: larger;
+font-style: italic;
+caption-side: top;
+font-weight: 700;
+}

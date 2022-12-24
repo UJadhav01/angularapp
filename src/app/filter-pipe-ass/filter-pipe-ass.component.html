@@ -1,0 +1,27 @@
+<strong><p>filter-pipe-ass to add mr. and miss. before name using custome pipe based on gender!</p></strong>
+
+<div class="col-md-8">
+  <table class="table table-bordered table-hover ">
+    <caption>Employee Information</caption>
+    <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>DOB</th>
+      <th>Gender</th>
+      <th>Salary</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of EmployeeInfo">
+      <td>{{item.id}}</td>
+      <td>{{item.name | customePrefixGender: item.gender}}</td>
+      <td>{{item.dob | date:'dd/MM/yyyy'}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.salary}}</td>
+      <td>{{item.company}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

@@ -13,17 +13,20 @@
 <header>
 
   <ul>
-    <li><a href="/home" class="navlinks" >Home</a></li>
-    <li><a routerLink="/htmlnotes" routerLinkActive="active" class="navlinks" >HTML Notes</a></li>
-    <li><a routerLink="/cssnotes" routerLinkActive="active" class="navlinks" >CSS Notes</a></li>
-    <li><a routerLink="/typescriptnotes" routerLinkActive="active" class="navlinks" >TypeScript Notes</a></li>
-    <li><a routerLink="/angularnotes" routerLinkActive="active" class="navlinks" >Angular Notes</a></li>
+    <li><a routerLink="/home" class="navlinks" *ngIf="isAuthenticated">Home</a></li>
+    <li><a routerLink="/htmlnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">HTML Notes</a></li>
+    <li><a routerLink="/cssnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">CSS Notes</a></li>
+    <li><a routerLink="/typescriptnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">TypeScript Notes</a></li>
+    <li><a routerLink="/angularnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">Angular Notes</a></li>
+    <li><a style="cursor: pointer;" (click)="onLogout()">LogOut</a></li>
 
   </ul>
 
 </header>
 
-<nav>
+<!-- <nav *ngIf="isAuthenticated"> -->
+  <nav>
+
 
   <ul>
     <li><a routerLink="/dir-demo" routerLinkActive="active" >Directive demo</a></li>
@@ -55,6 +58,10 @@
     <li><a routerLink="/subject-demo" routerLinkActive="active" >Subject Demo</a></li>
 
     <li><a routerLink="/pipe-demo" routerLinkActive="active" >Pipe Demo</a></li>
+    <li><a routerLink="/filter-pipe-demo" routerLinkActive="active" >Filter Pipe Demo</a></li>
+    <li><a routerLink="/filter-pipe-1st-ass" routerLinkActive="active" >Filter Pipe 1st-assignment</a></li>
+
+
 
 
   </ul>

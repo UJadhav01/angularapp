@@ -55,6 +55,11 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { ReverseStringPipe } from './pipe-demo/reverse-string.pipe';
 import { CustomeVowelsPipe } from './pipe-demo/custome-vowels.pipe';
 import { FindWordsPipe } from './pipe-demo/find-words.pipe';
+import { FilterPipeDemoComponent } from './filter-pipe-demo/filter-pipe-demo.component';
+import { FilterDemoPipe } from './filter-pipe-demo/filter-demo.pipe';
+import { FilterPipeAssComponent } from './filter-pipe-ass/filter-pipe-ass.component';
+import { CustomePrefixGenderPipe } from './filter-pipe-ass/custome-prefix-gender.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -99,6 +104,11 @@ import { FindWordsPipe } from './pipe-demo/find-words.pipe';
     ReverseStringPipe,
     CustomeVowelsPipe,
     FindWordsPipe,
+    FilterPipeDemoComponent,
+    FilterDemoPipe,
+    FilterPipeAssComponent,
+    CustomePrefixGenderPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

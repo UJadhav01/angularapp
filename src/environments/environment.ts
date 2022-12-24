@@ -4,9 +4,12 @@
 
 export const environment = {
   production: false,
-  apiURL : 'https://jsonplaceholder.typicode.com/'
+  apiURL : 'https://jsonplaceholder.typicode.com/', // for external api data
+
+  firebaseAPIKey:'AIzaSyBJM4iRGv4NQd1-p5R6DJIqyaeUxAsE-nA'// for login authentication purpose
 
 };
+
 
 
 /*

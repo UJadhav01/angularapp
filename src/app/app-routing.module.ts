@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
 import { AngularNotesComponent } from './angular-notes/angular-notes.component';
+import { AuthComponent } from './auth/auth.component';
 import { ComparepassComponent } from './comparepass/comparepass.component';
 import { CssNotesComponent } from './css-notes/css-notes.component';
 import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
 import { DirectivedemoComponent } from './directivedemo/directivedemo.component';
+import { FilterPipeAssComponent } from './filter-pipe-ass/filter-pipe-ass.component';
+import { FilterPipeDemoComponent } from './filter-pipe-demo/filter-pipe-demo.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { HtmlNotesComponent } from './html-notes/html-notes.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
@@ -29,6 +32,7 @@ import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.co
 
 
 const routes: Routes = [
+  {path: 'home', component: HomeComponentComponent},
   {path: 'htmlnotes', component: HtmlNotesComponent},
   {path: 'cssnotes', component: CssNotesComponent},
   {path: 'typescriptnotes', component: TypescriptNotesComponent},
@@ -62,11 +66,11 @@ const routes: Routes = [
   {path:'subject-demo',component:SubjectDemo1Component},
 
   {path:'pipe-demo',component:PipeDemoComponent},
+  {path:'filter-pipe-demo',component:FilterPipeDemoComponent},
+  {path:'filter-pipe-1st-ass',component:FilterPipeAssComponent},
 
-  {path: 'home', component: HomeComponentComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-
-
+  {path:'auth',component:AuthComponent},
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
 ];
 
 @NgModule({

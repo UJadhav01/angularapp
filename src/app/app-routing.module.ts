@@ -14,6 +14,7 @@ import { HtmlNotesComponent } from './html-notes/html-notes.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 import { ParentHooksLifeCycleComponent } from './parent-hooks-life-cycle/parent-hooks-life-cycle.component';
+import { PhoneMaskComponent } from './phone-mask/phone-mask.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { Reactive1stassignmentComponent } from './reactive1stassignment/reactive1stassignment.component';
@@ -33,6 +34,7 @@ import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.co
 
 const routes: Routes = [
   {path: 'home', component: HomeComponentComponent},
+  {path:'phone-mask',component:PhoneMaskComponent},
   {path: 'htmlnotes', component: HtmlNotesComponent},
   {path: 'cssnotes', component: CssNotesComponent},
   {path: 'typescriptnotes', component: TypescriptNotesComponent},

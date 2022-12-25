@@ -60,6 +60,11 @@ import { FilterDemoPipe } from './filter-pipe-demo/filter-demo.pipe';
 import { FilterPipeAssComponent } from './filter-pipe-ass/filter-pipe-ass.component';
 import { CustomePrefixGenderPipe } from './filter-pipe-ass/custome-prefix-gender.pipe';
 import { AuthComponent } from './auth/auth.component';
+import { PhoneMaskComponent } from './phone-mask/phone-mask.component';
+import { PhoneFormatPipe } from './phone-mask/phone-format.pipe';
+import { TextMaskModule } from 'angular2-text-mask';
+import { WjInputModule } from '@grapecity/wijmo.angular2.input';
+import { RetainCursorDirective } from './phone-mask/retain-cursor.directive';
 
 
 @NgModule({
@@ -109,6 +114,9 @@ import { AuthComponent } from './auth/auth.component';
     FilterPipeAssComponent,
     CustomePrefixGenderPipe,
     AuthComponent,
+    PhoneMaskComponent,
+    PhoneFormatPipe,
+    RetainCursorDirective,
   ],
   imports: [
     BrowserModule,
@@ -116,8 +124,9 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
     HttpClientModule,
+    TextMaskModule,
+    WjInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

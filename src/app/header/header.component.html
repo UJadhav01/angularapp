@@ -13,11 +13,11 @@
 <header>
 
   <ul>
-    <li><a routerLink="/home" class="navlinks" *ngIf="isAuthenticated">Home</a></li>
-    <li><a routerLink="/htmlnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">HTML Notes</a></li>
-    <li><a routerLink="/cssnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">CSS Notes</a></li>
-    <li><a routerLink="/typescriptnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">TypeScript Notes</a></li>
-    <li><a routerLink="/angularnotes" routerLinkActive="active" class="navlinks" *ngIf="isAuthenticated">Angular Notes</a></li>
+    <li><a routerLink="/home" class="navlinks" >Home</a></li>
+    <li><a routerLink="/htmlnotes" routerLinkActive="active" class="navlinks" >HTML Notes</a></li>
+    <li><a routerLink="/cssnotes" routerLinkActive="active" class="navlinks" >CSS Notes</a></li>
+    <li><a routerLink="/typescriptnotes" routerLinkActive="active" class="navlinks" >TypeScript Notes</a></li>
+    <li><a routerLink="/angularnotes" routerLinkActive="active" class="navlinks" >Angular Notes</a></li>
     <li><a style="cursor: pointer;" (click)="onLogout()">LogOut</a></li>
 
   </ul>
@@ -29,6 +29,7 @@
 
 
   <ul>
+    <li><a routerLink="/phone-mask" routerLinkActive="active" >Phone mask</a></li>
     <li><a routerLink="/dir-demo" routerLinkActive="active" >Directive demo</a></li>
     <li><a routerLink="/dir-ng-switch" routerLinkActive="active"  >Directive ngSwitch</a></li>
     <li><a routerLink="/dir-1st-ass" routerLinkActive="active"  >Directive 1st assignment</a></li>

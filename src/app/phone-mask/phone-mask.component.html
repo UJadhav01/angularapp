@@ -1,0 +1,58 @@
+
+<div class="row">
+    <form [formGroup]="form">
+
+ <div class="form-group">
+  <div>
+    phone no-1 :<input type="tel"
+    formControlName="phone1"
+    [textMask]="{mask: phoneMask}"
+    placeholder="63-456-765-3345"
+    autofocus
+    class="form-control"
+    />
+  </div><br><br>
+  <div class="form-group">
+    phone no-2: <input type="tel"
+    formControlName="phone2"
+    [textMask]="{mask: phoneMask}"
+    placeholder="63-456-765-3345"
+    class="form-control"
+    />
+    </div>
+ </div>
+
+ <div class="form-group mt-3">
+<strong>  <label for="thePhone">Phone Number1 :</label></strong>
+<wj-input-mask
+  id="thePhone"
+  mask="00-000-000-0000" >
+</wj-input-mask>
+</div>
+<div class="form-group mt-3">
+<strong>  <label for="thePhone">Phone Number 2 :</label></strong>
+  <wj-input-mask
+  id="thePhone"
+  mask="00-000-000-0000"
+  onchange="onInput($event)"
+  appRetainCursor>
+</wj-input-mask>
+</div>
+
+
+
+<!-- <div class="form-group">
+  <label for="thePhone">Phone Number</label>
+  <wj-input-mask
+  id="thePhone"
+  mask="63-000-000-0000"
+  [overwriteMode]="overwrite">
+</wj-input-mask>
+</div>
+
+<label>
+Enable Overwrite
+<input type="checkbox" [(ngModel)]="overwrite">
+</label> -->
+   </form>
+   </div>

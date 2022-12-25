@@ -1,0 +1,12 @@
+div{
+  justify-content: center;
+}
+input{
+  margin-left: 10px;
+  padding: 10px;
+  hyphens:auto;
+  width: 450px;
+}
+wj-input-mask{
+  width: fit-content;
+}

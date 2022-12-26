@@ -71,7 +71,6 @@ import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.comp
 import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
 import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
 import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
-import { HomeForShopChildsComponent } from './home-for-shop-childs/home-for-shop-childs.component';
 
 
 @NgModule({
@@ -130,7 +129,6 @@ import { HomeForShopChildsComponent } from './home-for-shop-childs/home-for-shop
     MobileCompComponent,
     ClothingCompComponent,
     ToysCompComponent,
-    HomeForShopChildsComponent,
   ],
   imports: [
     BrowserModule,

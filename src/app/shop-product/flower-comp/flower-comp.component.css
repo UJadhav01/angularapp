@@ -1,0 +1,17 @@
+.card{
+  width: 18rem;
+  height: 8%;
+  display: inline-block;
+  margin: 6px;
+  padding: 6px;
+}
+.card-img-top{
+  height: 140px;
+  cursor: zoom-in;
+}
+a{
+  display: inline-block;
+  margin-left: 40px;
+  margin: 5px;
+}
+

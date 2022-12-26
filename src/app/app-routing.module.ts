@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
@@ -30,9 +31,17 @@ import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.c
 import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.component';
+import { ShopProductComponent } from './shop-product/shop-product.component';
+import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
+import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.component';
+import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
+import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
 
 
 const routes: Routes = [
+
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  {path:'auth',component:AuthComponent},
   {path: 'home', component: HomeComponentComponent},
   {path:'phone-mask',component:PhoneMaskComponent},
   {path: 'htmlnotes', component: HtmlNotesComponent},
@@ -71,8 +80,17 @@ const routes: Routes = [
   {path:'filter-pipe-demo',component:FilterPipeDemoComponent},
   {path:'filter-pipe-1st-ass',component:FilterPipeAssComponent},
 
-  {path:'auth',component:AuthComponent},
-  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  {path:'shop-comp',component:ShopProductComponent,
+  children:
+[
+  {path:'clothing-comp',component:ClothingCompComponent},
+  {path:'flower-comp',component:FlowerCompComponent},
+  {path:'mobile-comp',component:MobileCompComponent},
+  {path:'toys-comp',component:ToysCompComponent},
+]
+
+},
+  {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page
 ];
 
 @NgModule({

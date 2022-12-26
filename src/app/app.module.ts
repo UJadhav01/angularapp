@@ -65,6 +65,13 @@ import { PhoneFormatPipe } from './phone-mask/phone-format.pipe';
 import { TextMaskModule } from 'angular2-text-mask';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { RetainCursorDirective } from './phone-mask/retain-cursor.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShopProductComponent } from './shop-product/shop-product.component';
+import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.component';
+import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
+import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
+import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
+import { HomeForShopChildsComponent } from './home-for-shop-childs/home-for-shop-childs.component';
 
 
 @NgModule({
@@ -117,6 +124,13 @@ import { RetainCursorDirective } from './phone-mask/retain-cursor.directive';
     PhoneMaskComponent,
     PhoneFormatPipe,
     RetainCursorDirective,
+    PageNotFoundComponent,
+    ShopProductComponent,
+    FlowerCompComponent,
+    MobileCompComponent,
+    ClothingCompComponent,
+    ToysCompComponent,
+    HomeForShopChildsComponent,
   ],
   imports: [
     BrowserModule,

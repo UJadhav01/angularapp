@@ -1,0 +1,17 @@
+.card{
+  width: 18rem;
+  height: 8%;
+  display: inline-block;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 25%;
+}
+
+.card-img-top{
+  border-radius: 25%;
+
+}
+a{
+  border-radius: 25%;
+  margin-left: 40px;
+}

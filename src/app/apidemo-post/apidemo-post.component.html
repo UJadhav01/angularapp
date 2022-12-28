@@ -1,0 +1,22 @@
+<p>API data by post</p>
+<!-- for display api data -->
+<table class="table table-bordered mt-3">
+  <thead>
+      <tr>
+        <th>user ID</th>
+        <th > id</th>
+        <th > title</th>
+        <th> body</th>
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of arrForUserData">
+          <td>{{item.userId}}</td>
+          <td><a [routerLink]="['/post-api-id',item.id]"
+            routerLinkActive="active" >{{item.id}}</a></td>
+          <td>{{item.title}}</td>
+          <td>{{item.body}}</td>
+        </tr>
+  </tbody>
+</table>

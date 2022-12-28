@@ -71,7 +71,8 @@ import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.comp
 import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
 import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
 import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
-
+import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
+import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
 
 @NgModule({
   declarations: [
@@ -129,6 +130,8 @@ import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component'
     MobileCompComponent,
     ClothingCompComponent,
     ToysCompComponent,
+    ApidemoPostComponent,
+    ApidemoPostuserdeatilsComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,7 +141,8 @@ import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component'
     ReactiveFormsModule,
     HttpClientModule,
     TextMaskModule,
-    WjInputModule
+    WjInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

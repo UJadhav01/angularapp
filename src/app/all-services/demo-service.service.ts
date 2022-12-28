@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -26,9 +27,12 @@ export class DemoServiceService {
    return this.httpClient.get(''+environment.apiURL+'users');
   }
 
-    getPostUsersData()
+    getPostUsersData():Observable<any>
   {
-   return this.httpClient.get(+environment.apiURL+'posts');
+   return this.httpClient.get(''+environment.apiURL+'posts');
   }
 
+  getPostUsersDataId(id):Observable<any>{
+    return this.httpClient.get(`${environment.apiURL}posts/`+id);
+  }
 }

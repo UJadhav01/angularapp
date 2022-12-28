@@ -1,0 +1,11 @@
+table{
+  width: 1000px;
+  border: 1px solid black;
+}
+.modal-dialog{
+  margin-top: 255px;
+}
+#modal-table{
+  width: 480px;
+}
+

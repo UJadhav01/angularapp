@@ -36,6 +36,8 @@ import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-com
 import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.component';
 import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
 import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
+import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
+import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
 
 
 const routes: Routes = [
@@ -90,6 +92,8 @@ const routes: Routes = [
 ]
 
 },
+{path:'post-api',component:ApidemoPostComponent},
+{path:'post-api-id/:id',component:ApidemoPostuserdeatilsComponent},
   {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page
 ];
 

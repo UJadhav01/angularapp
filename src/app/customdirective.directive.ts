@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
-import { AbstractControl, NgForm, NG_VALIDATORS, ValidationErrors, Validator} from '@angular/forms';
 
 @Directive({
   selector: '[appCustomDirective]',

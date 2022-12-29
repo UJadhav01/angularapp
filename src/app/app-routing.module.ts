@@ -1,6 +1,6 @@
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AddRemoveContentOnButtonComponent } from './add-remove-content-on-button/add-remove-content-on-button.component';
 import { AngularNotesComponent } from './angular-notes/angular-notes.component';
 import { AuthComponent } from './auth/auth.component';
@@ -31,11 +31,7 @@ import { Tdf5thassignmentComponent } from './tdf5thassignment/tdf5thassignment.c
 import { TdfsecondassComponent } from './tdfsecondass/tdfsecondass.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.component';
-import { ShopProductComponent } from './shop-product/shop-product.component';
-import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
-import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.component';
-import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
-import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
+
 import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
 
@@ -82,23 +78,16 @@ const routes: Routes = [
   {path:'filter-pipe-demo',component:FilterPipeDemoComponent},
   {path:'filter-pipe-1st-ass',component:FilterPipeAssComponent},
 
-  {path:'shop-comp',component:ShopProductComponent,
-  children:
-[
-  {path:'clothing-comp',component:ClothingCompComponent},
-  {path:'flower-comp',component:FlowerCompComponent},
-  {path:'mobile-comp',component:MobileCompComponent},
-  {path:'toys-comp',component:ToysCompComponent},
-]
-
-},
 {path:'post-api',component:ApidemoPostComponent},
 {path:'post-api-id/:id',component:ApidemoPostuserdeatilsComponent},
+{path:'shop-comp',loadChildren:'./shop-product/shopping-module.module#ShoppingModuleModule'},
+{path:'movie-detail',loadChildren:'./movie-details/moviemodel.module#MoviemodelModule'},
+
   {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

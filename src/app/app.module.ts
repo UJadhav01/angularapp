@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -49,6 +48,7 @@ import { AngularNotesComponent } from './angular-notes/angular-notes.component';
 import { ServiceDemoComponent } from './service-demo/service-demo.component';
 import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { Reactive2ndAssignmentComponent } from './reactive2nd-assignment/reactive2nd-assignment.component';
+
 import { SubjectDemo1Component } from './subject-demo1/subject-demo1.component';
 import { SubjectDemo2Component } from './subject-demo2/subject-demo2.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
@@ -58,6 +58,7 @@ import { FindWordsPipe } from './pipe-demo/find-words.pipe';
 import { FilterPipeDemoComponent } from './filter-pipe-demo/filter-pipe-demo.component';
 import { FilterDemoPipe } from './filter-pipe-demo/filter-demo.pipe';
 import { FilterPipeAssComponent } from './filter-pipe-ass/filter-pipe-ass.component';
+
 import { CustomePrefixGenderPipe } from './filter-pipe-ass/custome-prefix-gender.pipe';
 import { AuthComponent } from './auth/auth.component';
 import { PhoneMaskComponent } from './phone-mask/phone-mask.component';
@@ -65,14 +66,14 @@ import { PhoneFormatPipe } from './phone-mask/phone-format.pipe';
 import { TextMaskModule } from 'angular2-text-mask';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { RetainCursorDirective } from './phone-mask/retain-cursor.directive';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ShopProductComponent } from './shop-product/shop-product.component';
-import { FlowerCompComponent } from './shop-product/flower-comp/flower-comp.component';
-import { MobileCompComponent } from './shop-product/mobile-comp/mobile-comp.component';
-import { ClothingCompComponent } from './shop-product/clothing-comp/clothing-comp.component';
-import { ToysCompComponent } from './shop-product/toys-comp/toys-comp.component';
+
 import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
+import { ShoppingModuleModule } from './shop-product/shopping-module.module';
+import { MoviemodelModule } from './movie-details/moviemodel.module';
+
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apide
     WarningAlertComponent,
     HeaderComponent,
     DirectivedemoComponent,
+
     NgswitchComponent,
     ComparepassComponent,
     ComparepassDirective,
@@ -125,17 +127,13 @@ import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apide
     PhoneFormatPipe,
     RetainCursorDirective,
     PageNotFoundComponent,
-    ShopProductComponent,
-    FlowerCompComponent,
-    MobileCompComponent,
-    ClothingCompComponent,
-    ToysCompComponent,
     ApidemoPostComponent,
     ApidemoPostuserdeatilsComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,6 +1,7 @@
 import { AbstractControl, ControlContainer, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CanDialogService } from '../auth/can-dialog.service';
 
 @Component({
   selector: 'app-reactive2nd-assignment',
@@ -12,7 +13,7 @@ submitted:boolean=false;
 
 projectForm:FormGroup;
 projectNames=['Test','test'];
-  constructor(private _formBuilder:FormBuilder) { }
+  constructor(private _formBuilder:FormBuilder,public dialogService: CanDialogService) { }
 
   ngOnInit() {
     this.projectForm=this._formBuilder.group({
@@ -43,4 +44,11 @@ this.submitted=true;
 console.log(this.projectForm);
 
   }
+  onUnsavedChanges():Observable<boolean> | Promise<boolean> | boolean{
+    if (this.projectForm.dirty) {
+
+      return this.dialogService.confirm('You did not save changes, Do you want discard changes');
+  }
+  return true;
+}
 }

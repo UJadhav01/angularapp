@@ -10,6 +10,7 @@ import { ToysCompComponent } from './toys-comp/toys-comp.component';
 
 const routes:Routes=[
   {path:'',component:ShopProductComponent,
+
   children:[
   {path:'clothing-comp',component:ClothingCompComponent},
   {path:'flower-comp',component:FlowerCompComponent},

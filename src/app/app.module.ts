@@ -71,8 +71,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
-import { ShoppingModuleModule } from './shop-product/shopping-module.module';
-import { MoviemodelModule } from './movie-details/moviemodel.module';
+import { AuthGuard } from './auth/auth.guard';
+import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
+
 
 
 @NgModule({
@@ -130,7 +131,6 @@ import { MoviemodelModule } from './movie-details/moviemodel.module';
     ApidemoPostComponent,
     ApidemoPostuserdeatilsComponent,
 
-
   ],
   imports: [
     BrowserModule,
@@ -142,7 +142,7 @@ import { MoviemodelModule } from './movie-details/moviemodel.module';
     WjInputModule,
 
   ],
-  providers: [],
+  providers: [AuthGuard,NotSavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

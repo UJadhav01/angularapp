@@ -34,6 +34,8 @@ import { TypescriptNotesComponent } from './typescript-notes/typescript-notes.co
 
 import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
+import { AuthGuard } from './auth/auth.guard';
+import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
 
 
 const routes: Routes = [
@@ -63,11 +65,11 @@ const routes: Routes = [
   {path: 'tdf-2nd-ass', component: TdfsecondassComponent},
   {path: 'tdf-3rd-ass', component: Tdf3rdassignmentComponent},
   {path: 'tdf-4th-ass', component: Tdf4thassignmentComponent},
-  {path: 'tdf-5th-ass', component: Tdf5thassignmentComponent},
+  {path: 'tdf-5th-ass', component: Tdf5thassignmentComponent,canDeactivate:[NotSavedChangesGuard]},
 
-  {path: 'reactive-form', component: ReactiveFormComponent},
-  {path: 'reactive-1st-ass', component: Reactive1stassignmentComponent},
-  {path:'reactive-2nd-ass',component:Reactive2ndAssignmentComponent},
+  {path: 'reactive-form', component: ReactiveFormComponent,canDeactivate:[NotSavedChangesGuard]},
+  {path: 'reactive-1st-ass', component: Reactive1stassignmentComponent,canDeactivate:[NotSavedChangesGuard]},
+  {path:'reactive-2nd-ass',component:Reactive2ndAssignmentComponent,canDeactivate:[NotSavedChangesGuard]},
 
   {path:'demo-service-1',component:ServiceDemoComponent},
   {path:'demo-service-2',component:ServiceDemo2Component},
@@ -80,7 +82,7 @@ const routes: Routes = [
 
 {path:'post-api',component:ApidemoPostComponent},
 {path:'post-api-id/:id',component:ApidemoPostuserdeatilsComponent},
-{path:'shop-comp',loadChildren:'./shop-product/shopping-module.module#ShoppingModuleModule'},
+{path:'shop-comp', canActivate:[AuthGuard], loadChildren:'./shop-product/shopping-module.module#ShoppingModuleModule'},
 {path:'movie-detail',loadChildren:'./movie-details/moviemodel.module#MoviemodelModule'},
 
   {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page

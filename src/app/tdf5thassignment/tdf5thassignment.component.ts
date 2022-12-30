@@ -1,6 +1,9 @@
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { StudentData } from '../models/studentData';
+import { onNotSavedChanges } from '../auth/not-saved-changes.guard';
+import { Observable } from 'rxjs';
+import { CanDialogService } from '../auth/can-dialog.service';
 
 @Component({
   selector: 'app-tdf5thassignment',
@@ -39,13 +42,14 @@ export class Tdf5thassignmentComponent implements OnInit {
 
    studentInformation;
    userArray=[];
-  constructor() {
+  constructor(public dialogService: CanDialogService) {
   }
+
 
   ngOnInit() {
   }
-
-  onStudRegistration(myForm:NgForm){
+  myForm:NgForm
+  onStudRegistration(myForm){
     //showing errors below each input field if submitting without enter data
     this.studentInformation=new StudentData();
 
@@ -68,7 +72,13 @@ this.studentInformation.firstName=myForm.value.userDetails.firstName;
 if(myForm.value !== ''){
   console.log(myForm.value);
 }
-
   }
+  onUnsavedChanges():Observable<boolean> | Promise<boolean> | boolean{
+    if (this.myForm.dirty) {
+
+      return this.dialogService.confirm('Do you want discard changes');
+  }
+  return true;
+}
   }
 

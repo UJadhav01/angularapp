@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { CanDialogService } from '../auth/can-dialog.service';
 
 @Component({
   selector: 'app-reactive-form',
@@ -25,7 +26,7 @@ export class ReactiveFormComponent implements OnInit {
 
 userNames:any = ['codemind', 'technology', 'codemind technology'];
 
-  constructor(private _fb:FormBuilder) {
+  constructor(private _fb:FormBuilder,public dialogService: CanDialogService) {
     this.onCreateForm();
    }
 
@@ -109,5 +110,11 @@ console.log(this.myReactiveForm);
     })
     return myResponse;
   }
+  onUnsavedChanges():Observable<boolean> | Promise<boolean> | boolean{
+    if (this.myReactiveForm.dirty) {
 
+      return this.dialogService.confirm('You did not save changes, Do you want discard changes');
+  }
+  return true;
+}
 }

@@ -2,6 +2,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Component, OnInit } from '@angular/core';
 import { StudentData } from '../models/studentData';
 import { Observable } from 'rxjs/internal/Observable';
+import { onNotSavedChanges } from '../auth/not-saved-changes.guard';
+import { CanDialogService } from '../auth/can-dialog.service';
 
 @Component({
   selector: 'app-reactive1stassignment',
@@ -25,7 +27,7 @@ myForm:FormGroup;
 
    studentInformation:StudentData;
    userArray=[];
-  constructor() {
+  constructor(public dialogService: CanDialogService) {
     this.onCreateRegistration();
   }
 
@@ -69,4 +71,12 @@ myForm:FormGroup;
 
     console.log(this.myForm);
   }
+
+  onUnsavedChanges():Observable<boolean> | Promise<boolean> | boolean{
+    if (this.myForm.dirty) {
+
+      return this.dialogService.confirm('You have unsaved changes, Do you want leave');
+  }
+  return true;
+}
 }

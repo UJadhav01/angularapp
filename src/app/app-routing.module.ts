@@ -36,6 +36,8 @@ import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
+import { JasonApiComponent } from './jason-api/jason-api.component';
+import { RapidApiComponent } from './rapid-api/rapid-api.component';
 
 
 const routes: Routes = [
@@ -84,6 +86,9 @@ const routes: Routes = [
 {path:'post-api-id/:id',component:ApidemoPostuserdeatilsComponent},
 {path:'shop-comp', canActivate:[AuthGuard], loadChildren:'./shop-product/shopping-module.module#ShoppingModuleModule'},
 {path:'movie-detail',loadChildren:'./movie-details/moviemodel.module#MoviemodelModule'},
+
+{path:'json-api',component:JasonApiComponent},
+{path:'rapid-api',loadChildren:'./rapid-api/rapidapi.module#RapidapiModule'},
 
   {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page
 ];

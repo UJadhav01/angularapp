@@ -1,5 +1,4 @@
 .container{
-  margin-top:60px;
   margin-left: 300px;
   border: 1px solid black;
   margin: 100px;
@@ -14,7 +13,6 @@ background-size: cover;
   width: fit-content;
   border: 2px solid black;
   font-size: 20px;
-  margin-top:40px;
   background-color: transparent;
 }
 .card-header{

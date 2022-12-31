@@ -1,7 +1,7 @@
 <div class="container">
   <form #myForm="ngForm" (ngSubmit)="onRegister(myForm)">
 
-    <div class="maindiv px-5" >
+    <div class="maindiv px-5 col-md-10" >
     <div class="row mt-3">
       <div class="form-group col-md-4">
         <label for="firstName">First Name :</label>
@@ -29,9 +29,9 @@
 
     <div class="row mt-3">
       <div class="form-group col-md-1 mr-5">
-        <label for="birthday">Birthday: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label for="birthday">Birthday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
       </div>
-      <div class="form-group col-md-2 px-3">
+      <div class="form-group col-md-2 px-5">
         <select id="birthDate" class="form-control form-select"
         placeholder="day"
        name="birthDate" ngModel required >

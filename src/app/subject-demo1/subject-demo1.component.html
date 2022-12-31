@@ -1,7 +1,7 @@
 <h4 style="margin-left:300px;">Subject/Behavior Subject Demo</h4>
 
-<div style="display: flex;float: left;border: 1px solid black;width: 500px;padding: 10px;">
-  <div style="margin-left: 20px;">
+<div style="display: flex;float: left;border: 1px solid black;width: 500px;padding: 10px;" class="col-md-10">
+  <div style="margin-left: 10px;">
     <p>subject-demo1 works!</p><br>
 Employee id : <input type="number" #empId name="epId" ><br><br>
 Employee Name : <input type="text" #empName name="epName" ><br><br>
@@ -36,6 +36,7 @@ Employee Position : <input type="text" #empRole name="epRole" ><br><br>
   </tbody>
 </table>
 <br>
+
  <!-- <p *ngFor="let item of employeeArray">
   Employee Id = {{item.epId}} <br>
   Employee Name = {{item.epName}} <br>
@@ -47,5 +48,8 @@ Employee Position : <input type="text" #empRole name="epRole" ><br><br>
    </div> -->
 
   </div>
+
+<div style="float: left;border: 1px solid black; margin-left: 20px;width: 550px; padding: 8px;">
+  <app-subject-demo2></app-subject-demo2>
 </div>
-<div style="float: left;border: 1px solid black; margin-left: 40px;width: 500px; padding: 10px;"><app-subject-demo2></app-subject-demo2></div>
+</div>

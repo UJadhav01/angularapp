@@ -1,0 +1,108 @@
+<strong><p>BB Finance API</p></strong>
+<!--
+card
+date
+id
+longURL
+thumbnailImage
+title
+ -->
+ <strong><p>Data of news Array of object</p></strong>
+ <div class="card" style="width: 18rem;height: 370px;  display: flex;float: left; margin-left: 5px;margin-bottom: 5px;" *ngFor="let item of bbQuote;let i=index">
+  <span *ngIf="item.thumbnailImage"><img class="card-img-top" src="{{item.thumbnailImage}}"
+    width="320px" height="140px" alt="Card image cap"></span>
+
+  <div class="card-body">
+    <h5 class="card-title">{{item.title}}</h5>
+    <p class="card-text">ID: {{item.id}}</p>
+    <p class="card-text">Date: {{item.date}}</p>
+    <a href="{{item.longURL}}" class="btn btn-primary">see more details</a>
+  </div>
+</div>
+
+ <!-- <div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr.No:</th>
+        <th>Title</th>
+        <th>ID</th>
+        <th>Card</th>
+        <th>Date</th>
+        <th>longURL</th>
+        <th>thumbnailImage</th>
+      </tr>
+    </thead>
+<tbody>
+  <tr *ngFor="let item of bbQuote;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.id}}</td>
+    <td>{{item.card}}</td>
+    <td>{{item.date}}</td>
+
+    <td *ngIf="item.longURL"><!--{{item.longURL}}
+      <video width="320" height="140" controls autoplay>
+        <source src="{{item.longURL}}" type="video/mp4">
+      </video>
+    </td>
+    <td *ngIf="item.thumbnailImage"><!--{{item.thumbnailImage}} only for displaying address
+      <img src="{{item.thumbnailImage}}" alt="" width="320px" height="100px" type="png/jpg">
+    </td>
+
+  </tr>
+</tbody>
+  </table>
+ </div> -->
+ <br>
+
+
+ <div>
+  <strong ><p>Data of quote Array of object</p></strong>
+  <table class="table table-bordered" style="width: 25%;">
+    <thead>
+      <tr>
+        <th>Sr.No:</th>
+        <th>Card</th>
+        <th>Country</th>
+        <th>Currency</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Region</th>
+        <th>ResourceId</th>
+        <th>ResourceSubtype</th>
+        <th>ResourceType</th>
+        <th>SecurityType  </th>
+        <th>Symbol</th>
+        <th>Template</th>
+        <th>Ticker</th>
+        <th>TickerName</th>
+        <th>TinyName</th>
+        <th>Title</th>
+        <th>WatchList</th>
+      </tr>
+    </thead>
+<tbody>
+  <tr *ngFor="let item of bbNews;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{item.card}}</td>
+    <td>{{item.country}}</td>
+    <td>{{item.currency}}</td>
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.region}}</td>
+    <td>{{item.resourceId}}</td>
+    <td>{{item.resourceSubtype}}</td>
+    <td>{{item.resourceType}}</td>
+    <td>{{item.securityType}}</td>
+    <td>{{item.symbol}}</td>
+    <td>{{item.template}}</td>
+    <td>{{item.ticker}}</td>
+    <td>{{item.tickerName}}</td>
+    <td>{{item.tinyName}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.watchlist}}</td>
+  </tr>
+</tbody>
+  </table>
+ </div>

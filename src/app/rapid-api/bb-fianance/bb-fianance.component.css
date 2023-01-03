@@ -2,3 +2,12 @@ table{
   border: 1px solid black;
   width: fit-content;
 }
+.div1{
+  width: 18rem;
+  height: 370px;
+  display: flex;
+  float: left;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}

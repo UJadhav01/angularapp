@@ -19,7 +19,8 @@ bbNews:any=[];
       this.bbQuote=result.news;
       this.bbNews=result.quote;
     });
-
+    // let newData = [...this.datr, Object.values(Applicationdata)]
+    // this.datr = newData;
 
   }
 

@@ -7,8 +7,9 @@ longURL
 thumbnailImage
 title
  -->
+ <div>
  <strong><p>Data of news Array of object</p></strong>
- <div class="card" style="width: 18rem;height: 370px;  display: flex;float: left; margin-left: 5px;margin-bottom: 5px;" *ngFor="let item of bbQuote;let i=index">
+ <div class="card div1"  *ngFor="let item of bbQuote;let i=index">
   <span *ngIf="item.thumbnailImage"><img class="card-img-top" src="{{item.thumbnailImage}}"
     width="320px" height="140px" alt="Card image cap"></span>
 
@@ -18,6 +19,7 @@ title
     <p class="card-text">Date: {{item.date}}</p>
     <a href="{{item.longURL}}" class="btn btn-primary">see more details</a>
   </div>
+</div>
 </div>
 
  <!-- <div>
@@ -54,10 +56,12 @@ title
 </tbody>
   </table>
  </div> -->
- <br>
+
+
 
 
  <div>
+  <br><br>
   <strong ><p>Data of quote Array of object</p></strong>
   <table class="table table-bordered" style="width: 25%;">
     <thead>

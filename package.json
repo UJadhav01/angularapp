@@ -24,6 +24,7 @@
     "angular2-text-mask": "^9.0.0",
     "bootstrap": "^5.2.3",
     "eventemitter3": "^4.0.7",
+    "firebase": "^9.15.0",
     "follow-redirects": "^1.14.9",
     "jquery": "^3.6.1",
     "ngx-mask": "^8.2.0",

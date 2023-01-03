@@ -259,7 +259,7 @@ INSTRUCTIONS:
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of userArray">
+        <tr *ngFor="let item of userArray;let i=index">
           <td>{{item.firstName}}</td>
           <td>{{item.lastName}}</td>
           <td>{{item.age}}</td>
@@ -269,6 +269,8 @@ INSTRUCTIONS:
           <td>{{item.gender}}</td>
           <td>{{item.password}}</td>
           <td>{{item.confirmPassword}}</td>
+          <td><button (click)="onEditData(i)">Edit</button> </td>
+           <td><button (click)="onDeleteData(i)">Delete</button></td>
         </tr>
       </tbody>
     </table>

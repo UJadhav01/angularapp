@@ -1,0 +1,246 @@
+<!-- Assignments
+Create a registration form that contains the following fields.
+REQUIREMENTS:
+ First Name [Required, Min 5 and max 5 char]
+ Last Name [Max 10 char]
+ Age [Required, B/W 17-20]
+ Email [Required, Validate email]
+ Phone [Max 10, Allow only numbers]
+ City (Dropdown) Options:['Mumbai','Kolkata','Delhi']
+ Gender [Required]
+ Password [Required]
+ Confirm Password [Required]
+
+Assignments
+INSTRUCTIONS:
+ . Should validate using angular Form group.
+ . Can style using any CSS framework like bootstrap.
+ . Focus on completing functionality first.
+ . Style using CSS .
+-->
+<div class="maindiv">
+  <h3>Student registration form (using Reactive form)</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onStudRegistration()">
+    <div formGroupName="userDetails" class="innerdiv">
+      <div class="row">
+        <div class="form-group mt-2 col-md-6">
+          <label for="firstName">First Name :</label>
+          <input
+
+            type="text"
+            formControlName="firstName"
+            placeholder="First name"
+            class="form-control"
+          />
+          <span
+            class="text-danger"
+            *ngIf="myForm.get('userDetails.firstName').invalid &&
+            myForm.get('userDetails.firstName').touched || submitted">
+            <span
+            *ngIf="myForm.get('userDetails.firstName').errors?.required ">
+            First name should not be empty</span>
+
+            <span *ngIf="myForm.get('userDetails.firstName').errors?.pattern">
+              First name must be 5 characters</span>
+            </span>
+        </div>
+
+        <div class="form-group mt-2 col-md-6">
+          <label for="lastName">Last Name :</label>
+          <input
+            type="text"
+            formControlName="lastName"
+            placeholder="Last name"
+            class="form-control"
+          />
+          <span
+            class="text-danger"
+            *ngIf="myForm.get('userDetails.lastName').invalid &&
+            myForm.get('userDetails.lastName').touched || submitted">
+            <span
+            *ngIf="myForm.get('userDetails.lastName').errors?.required ">
+            Last name should not be empty</span>
+
+            <span *ngIf="myForm.get('userDetails.lastName').errors?.pattern">
+              Last name must be upto 10 characters</span>
+            </span>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group mt-2 col-md-6">
+          <label for="age">Age :</label>
+          <input
+            type="text"
+            formControlName="age"
+            placeholder="age e.g. 18"
+            class="form-control"
+          />
+          <span
+            class="text-danger"
+            *ngIf="myForm.get('userDetails.age').invalid &&
+            myForm.get('userDetails.age').touched || submitted">
+            <span
+            *ngIf="myForm.get('userDetails.age').errors?.required ">
+            Age should not be empty</span>
+
+            <span *ngIf="myForm.get('userDetails.age').errors?.pattern">
+              Age must in between 17 to 20 years</span>
+            </span>
+
+        </div>
+
+        <!-- to take email input from user -->
+        <div class="form-group mt-2 col-md-6">
+          User Email :
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter user email"
+            title="Please provide valid email address"
+          />
+          <!-- to check email is valid or not -->
+          <span
+            class="text-danger"
+            *ngIf="myForm.get('userDetails.email').invalid &&
+            myForm.get('userDetails.email').touched || submitted"
+          >
+            <span *ngIf="myForm.get('userDetails.email').errors?.required">
+               Enter valid email is required</span>
+               <span *ngIf="myForm.get('userDetails.email').errors?.pattern">
+                Please enter valid email</span>
+              </span >
+        </div>
+      </div>
+
+  <div class="row">
+  <div class="form-group mt-3 col-md-6">
+    <label for="phone">Phone No.:</label>
+          <input
+            type="text"
+            formControlName="phone"
+            placeholder="phone e.g. 9999999999"
+            class="form-control"
+          />
+          <div *ngIf="myForm.get('userDetails.phone').invalid &&
+          myForm.get('userDetails.phone').touched || submitted"
+          class="text-danger">
+            <div *ngIf="myForm.get('userDetails.phone').errors?.required">
+              Please enter mobile number</div>
+            <div *ngIf="myForm.get('userDetails.phone').errors?.pattern">
+              Please enter valid phone number</div>
+          </div>
+  </div>
+
+  <div class="form-group mt-3 col-md-6">
+    <label for="city">City :</label>
+    <select formControlName="city" id="city"
+    class="form-control form-select">
+      <option *ngFor="let item of city" [value]="item">{{item}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <label for="gender" class="mt-3"> Gender :</label>
+  <div
+            *ngFor="let gender of radioArray"
+            class="custom-control custom-radio col-md-2"
+          >
+            <input
+              type="radio"
+              id="{{ gender.id }}"
+              formControlName="gender"
+              value="{{ gender.value }}"
+              class="custom-control-input"
+            />
+            <label for="{{ gender.id }}" class="custom-control-label">{{
+              gender.value
+            }}</label>
+          </div>
+</div>
+
+      <div class="row ">
+      <!-- for take password input from user -->
+      <div class=" form-group mt-2 col-md-6">
+        Password:
+        <input
+          type="text"
+          formControlName="password"
+          id="password"
+          class="form-control"
+          placeholder="e.g abc123@"
+
+        />
+        <!-- to check password is valid or not -->
+        <span
+        class="text-danger"
+          *ngIf="
+            !myForm.get('userDetails.password').valid &&
+            myForm.get('userDetails.password').touched || submitted
+          "
+        >
+          <span class="text-danger"
+          *ngIf="myForm.get('userDetails.password').errors?.required">
+            password should not be empty</span
+          >
+
+        </span>
+      </div>
+      <!-- for take confirm password input from user -->
+      <div class="col-md-6 mt-2">
+        Confirm Password:
+        <input
+          type="text"
+          formControlName="confirmPassword"
+          id="confirmPassword"
+          class="form-control"
+          placeholder="e.g abc123@"
+          appComparepass="password"
+        />
+        <!-- to check confirm password is valid or not -->
+        <span
+        class="text-danger"
+          *ngIf="
+            !myForm.get('userDetails.confirmPassword').valid &&
+            myForm.get('userDetails.confirmPassword').touched || submitted">
+
+          <div class="text-danger"
+          *ngIf="myForm.get('userDetails.confirmPassword').errors?.required" >
+
+        Confirm password should not be empty</div>
+
+
+          <span class="text-danger"
+          *ngIf="myForm.get('userDetails.confirmPassword').errors?.notEqual">
+            password mismatch,enter same as password</span
+          >
+        </span>
+      </div>
+
+    </div>
+
+
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">{{editMode?'update':'Add'}}</button
+      >
+
+      <button type="reset" class="btn btn-success btn-lg " (click)="onClear()" style="margin-left: 20px;">Reset</button
+        ><br /><br />
+      <!--to check form is valid or touched
+      <strong>
+        <span
+          *ngIf="myForm.get('userDetails').invalid &&
+          myForm.get('userDetails').touched || submitted"
+          class="alert text-danger py-2 pt-2"
+        >
+          please fill all the field's of form properly...
+        </span>
+      </strong>-->
+
+  </form>
+  <br>
+</div>

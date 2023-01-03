@@ -1,0 +1,62 @@
+<p>curd-operation works!</p>
+
+<div class="row">
+  <div class="col-xs-10">
+      <app-add-studentinfo
+      ></app-add-studentinfo>
+  </div>
+</div>
+<div class="col-md-6" id="table">
+  <table class="table table-bordered " style="border: 1px solid black;">
+    <caption >Student Registration Information</caption>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Age</th>
+        <th>Email id</th>
+        <th>Phone No.</th>
+        <th>City</th>
+        <th>Gender</th>
+        <th>Password</th>
+        <th>Confirm Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ingredients;let i=index"
+      >
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.password}}</td>
+        <td>{{item.confirmPassword}}</td>
+        <td>
+          <button (click)="onEditItem(i)">Edit Data</button></td>
+        <td>
+        <button (click)="onDeleteItem(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <nav class="navbar navbar-expand navbar-light bg-light" style="width: 1220px;">
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="width: 1220px;">
+    <ul class="navbar-nav mr-1 mt-1 mt-lg-0">
+
+      <li class="nav-item"><a routerLink="add-student"
+        routerLinkActive="active" class="nav-link" >Student registration form</a></li>
+
+    </ul>
+  </div>
+
+
+</nav> -->
+
+<div style="width: 1220px;">
+  <router-outlet></router-outlet>
+</div>

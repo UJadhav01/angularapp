@@ -1,9 +1,10 @@
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { StudentData } from '../models/studentData';
 import { Observable } from 'rxjs/internal/Observable';
-import { onNotSavedChanges } from '../auth/not-saved-changes.guard';
 import { CanDialogService } from '../auth/can-dialog.service';
+import { FirebaseCurdService } from '../all-services/firebase-curd.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reactive1stassignment',
@@ -27,11 +28,29 @@ myForm:FormGroup;
 
    studentInformation:StudentData;
    userArray=[];
-  constructor(public dialogService: CanDialogService) {
+  constructor(
+    public dialogService: CanDialogService,
+    private _httpClient:FirebaseCurdService) {
     this.onCreateRegistration();
   }
 
   ngOnInit() {
+    this._httpClient.getObjectPost().pipe(
+      map(
+        res=>{
+          const arr=[];
+          for(const key in res){
+            if(res.hasOwnProperty(key)){
+              arr.push({...res[key],id:key})
+            }
+          }
+          return arr;
+        }
+      )
+    )
+    .subscribe(studentData=>{
+      console.log('data from firebase server',studentData);
+    })
   }
 
   onCreateRegistration(){
@@ -52,11 +71,14 @@ myForm:FormGroup;
 
   onStudRegistration(){
        //showing errors below each input field if submitting without enter data
-       this.studentInformation=new StudentData();
+       this.studentInformation=new StudentData(this.myForm.value.userDetails.firstName,this.myForm.value.userDetails.lastName,
+        this.myForm.value.userDetails.age,this.myForm.value.userDetails.email,this.myForm.value.userDetails.phone,
+        this.myForm.value.userDetails.city,this.myForm.value.userDetails.gender,this.myForm.value.userDetails.password,
+        this.myForm.value.userDetails.confirmPassword);
 
        this.submitted=true;
 
-       this.studentInformation.firstName=this.myForm.value.userDetails.firstName;
+         this.studentInformation.firstName=this.myForm.value.userDetails.firstName;
          this.studentInformation.lastName=this.myForm.value.userDetails.lastName;
          this.studentInformation.age=this.myForm.value.userDetails.age;
          this.studentInformation.email=this.myForm.value.userDetails.email;
@@ -64,10 +86,13 @@ myForm:FormGroup;
          this.studentInformation.city=this.myForm.value.userDetails.city;
          this.studentInformation.gender=this.myForm.value.userDetails.gender;
          this.studentInformation.password=this.myForm.value.userDetails.password;
-         this.studentInformation.confirmPassword=this.myForm.value.userDetails.firstName;
+         this.studentInformation.confirmPassword=this.myForm.value.userDetails.confirmPassword;
 
          this.userArray.push(this.studentInformation);
+        this._httpClient.sendObjectPost(this.studentInformation).subscribe(studResult=>{
+          console.log('data to server',studResult);
 
+        })
 
     console.log(this.myForm);
   }
@@ -79,4 +104,5 @@ myForm:FormGroup;
   }
   return true;
 }
+
 }

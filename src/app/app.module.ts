@@ -73,6 +73,8 @@ import { ApidemoPostComponent } from './apidemo-post/apidemo-post.component';
 import { ApidemoPostuserdeatilsComponent } from './apidemo-postuserdeatils/apidemo-postuserdeatils.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
+import { RxjsComponentComponent } from './rxjs-component/rxjs-component.component';
+
 
 
 
@@ -131,7 +133,7 @@ import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
     PageNotFoundComponent,
     ApidemoPostComponent,
     ApidemoPostuserdeatilsComponent,
-
+    RxjsComponentComponent,
 
   ],
   imports: [

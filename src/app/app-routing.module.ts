@@ -38,6 +38,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { NotSavedChangesGuard } from './auth/not-saved-changes.guard';
 import { JasonApiComponent } from './jason-api/jason-api.component';
 import { RapidApiComponent } from './rapid-api/rapid-api.component';
+import { CurdOperationComponent } from './curd-operation/curd-operation.component';
+import { RxjsComponentComponent } from './rxjs-component/rxjs-component.component';
 
 
 const routes: Routes = [
@@ -89,6 +91,8 @@ const routes: Routes = [
 
 {path:'json-api',component:JasonApiComponent},
 {path:'rapid-api',loadChildren:'./rapid-api/rapidapi.module#RapidapiModule'},
+{path:'curd-data',loadChildren:'./curd-operation/curd-opration-module.module#CurdOprationModuleModule'},
+{path:'rxjs-operator',component:RxjsComponentComponent},
 
   {path:'**',component:PageNotFoundComponent},// Wildcard route for a 404 page
 ];

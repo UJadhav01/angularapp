@@ -1,4 +1,3 @@
-import { EmployeeInfo } from './../../../../sample/src/app/shared/employeeInfo';
 import { Component, OnInit } from '@angular/core';
 export class EmployeeData{
   id:number;

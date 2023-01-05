@@ -71,10 +71,7 @@ myForm:FormGroup;
 
   onStudRegistration(){
        //showing errors below each input field if submitting without enter data
-       this.studentInformation=new StudentData(this.myForm.value.userDetails.firstName,this.myForm.value.userDetails.lastName,
-        this.myForm.value.userDetails.age,this.myForm.value.userDetails.email,this.myForm.value.userDetails.phone,
-        this.myForm.value.userDetails.city,this.myForm.value.userDetails.gender,this.myForm.value.userDetails.password,
-        this.myForm.value.userDetails.confirmPassword);
+       this.studentInformation=new StudentData();
 
        this.submitted=true;
 

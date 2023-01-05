@@ -6,8 +6,18 @@ export const environment = {
   production: false,
   apiURL : 'https://jsonplaceholder.typicode.com/', // for external api data
 
-  firebaseAPIKey:'AIzaSyBJM4iRGv4NQd1-p5R6DJIqyaeUxAsE-nA'// for login authentication purpose
+  firebaseAPIKey:'AIzaSyBJM4iRGv4NQd1-p5R6DJIqyaeUxAsE-nA',// for login authentication purpose
 
+  firebaseConfig : {
+    apiKey: "AIzaSyBJM4iRGv4NQd1-p5R6DJIqyaeUxAsE-nA",
+    authDomain: "my-angular-app-f76b1.firebaseapp.com",
+    databaseURL: "https://my-angular-app-f76b1-default-rtdb.firebaseio.com",
+    projectId: "my-angular-app-f76b1",
+    storageBucket: "my-angular-app-f76b1.appspot.com",
+    messagingSenderId: "214175427574",
+    appId: "1:214175427574:web:c0b20312ac57b4b5adf5d7",
+    measurementId: "G-4778Z8VCW6"
+  }
 };
 
 
